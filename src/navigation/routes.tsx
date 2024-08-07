@@ -1,25 +1,24 @@
-import { NavigationContainer, ThemeProvider } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { forwardRef, memo } from 'react';
-import { routeNames } from './routeNames';
-import Personalization from '../screens/auth/pitch/Personalization';
-import BioFitScore from '../screens/auth/pitch/BioFitScore';
-import ImproveAndWin from '../screens/auth/pitch/ImproveAndWin';
-import Auth from '../screens/auth/Auth/Auth';
-import SignUp from '../screens/auth/SignUp/SignUp';
-import ForgotPassword from '../screens/auth/ForgotPassword/ForgotPassword';
-import OTP from '../screens/auth/OTP/OTP';
-import BasicInformation from '../screens/onboarding/BasicInformation';
-import BMI from '../screens/onboarding/BMI';
-import Address from '../screens/onboarding/Address';
-import Permissions from '../screens/onboarding/Permissions';
-import Home from '../screens/dashboard/Home';
-import Shop from '../screens/dashboard/Shop';
-import Logs from '../screens/dashboard/Logs';
-import Consultation from '../screens/dashboard/Consultation';
-import Goals from '../screens/onboarding/Goals';
-import { useUserStore } from '../store';
+import { NavigationContainer, ThemeProvider } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { forwardRef, memo } from "react";
+import { routeNames } from "./routeNames";
+import Personalization from "../screens/auth/pitch/Personalization";
+import BioFitScore from "../screens/auth/pitch/BioFitScore";
+import ImproveAndWin from "../screens/auth/pitch/ImproveAndWin";
+import Auth from "../screens/auth/Auth/Auth";
+import ForgotPassword from "../screens/auth/ForgotPassword/ForgotPassword";
+import OTP from "../screens/auth/OTP/OTP";
+import BasicInformation from "../screens/onboarding/BasicInformation";
+import BMI from "../screens/onboarding/BMI";
+import Address from "../screens/onboarding/Address";
+import Permissions from "../screens/onboarding/Permissions";
+import Home from "../screens/dashboard/Home";
+import Shop from "../screens/dashboard/Shop";
+import Logs from "../screens/dashboard/Logs";
+import Consultation from "../screens/dashboard/Consultation";
+import Goals from "../screens/onboarding/Goals";
+import { useUserStore } from "../store";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -32,7 +31,7 @@ const AuthStackNavigator = () => {
       <AuthStack.Navigator initialRouteName={routeNames.AUTH}>
         {/* Pitch */}
         <AuthStack.Screen
-          name={routeNames.PERSONLIZATION}
+          name={routeNames.PERSONALIZATION}
           component={Personalization}
         />
         <AuthStack.Screen
@@ -122,6 +121,6 @@ const Routes = forwardRef(() => {
   );
 });
 
-Routes.displayName = 'Routes';
+Routes.displayName = "Routes";
 
 export default memo(Routes);
