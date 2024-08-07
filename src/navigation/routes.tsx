@@ -18,6 +18,7 @@ import Home from '../screens/dashboard/Home';
 import Shop from '../screens/dashboard/Shop';
 import Logs from '../screens/dashboard/Logs';
 import Consultation from '../screens/dashboard/Consultation';
+import Goals from '../screens/onboarding/Goals';
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -71,10 +72,7 @@ const OnboardingStackNavigator = () => {
           name={routeNames.PERMISSIONS}
           component={Permissions}
         />
-        <OnboardingStack.Screen
-          name={routeNames.PERMISSIONS}
-          component={Permissions}
-        />
+        <OnboardingStack.Screen name={routeNames.GOALS} component={Goals} />
       </OnboardingStack.Navigator>
     </>
   );

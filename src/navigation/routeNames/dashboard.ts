@@ -45,3 +45,5 @@ const dashboardRouteNames = {
   TODAYS_WORKOUT: 'TODAYS_WORKOUT',
   TODAYS_WORKOUT_TIMER: 'TODAYS_WORKOUT_TIMER',
 };
+
+export default dashboardRouteNames;
