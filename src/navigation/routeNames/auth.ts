@@ -1,5 +1,5 @@
 const authRouteNames = {
-  LOGIN: 'LOGIN',
+  AUTH: 'AUTH',
   SIGN_UP: 'SIGN_UP',
   FORGOT_PASSWORD: 'FORGOT_PASSWORD',
   OTP: 'OTP',

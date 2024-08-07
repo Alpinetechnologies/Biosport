@@ -6,10 +6,10 @@ import { routeNames } from './routeNames';
 import Personalization from '../screens/auth/pitch/Personalization';
 import BioFitScore from '../screens/auth/pitch/BioFitScore';
 import ImproveAndWin from '../screens/auth/pitch/ImproveAndWin';
-import Login from '../screens/auth/Login';
-import SignUp from '../screens/auth/SignUp';
-import ForgotPassword from '../screens/auth/ForgotPassword';
-import OTP from '../screens/auth/OTP';
+import Auth from '../screens/auth/Auth/Auth';
+import SignUp from '../screens/auth/SignUp/SignUp';
+import ForgotPassword from '../screens/auth/ForgotPassword/ForgotPassword';
+import OTP from '../screens/auth/OTP/OTP';
 import BasicInformation from '../screens/onboarding/BasicInformation';
 import BMI from '../screens/onboarding/BMI';
 import Address from '../screens/onboarding/Address';
@@ -19,6 +19,7 @@ import Shop from '../screens/dashboard/Shop';
 import Logs from '../screens/dashboard/Logs';
 import Consultation from '../screens/dashboard/Consultation';
 import Goals from '../screens/onboarding/Goals';
+import { useUserStore } from '../store';
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -28,7 +29,7 @@ const DashboardTabs = createBottomTabNavigator();
 const AuthStackNavigator = () => {
   return (
     <>
-      <AuthStack.Navigator initialRouteName={routeNames.LOGIN}>
+      <AuthStack.Navigator initialRouteName={routeNames.AUTH}>
         {/* Pitch */}
         <AuthStack.Screen
           name={routeNames.PERSONLIZATION}
@@ -44,8 +45,11 @@ const AuthStackNavigator = () => {
         />
 
         {/* Auth */}
-        <AuthStack.Screen name={routeNames.LOGIN} component={Login} />
-        <AuthStack.Screen name={routeNames.SIGN_UP} component={SignUp} />
+        <AuthStack.Screen
+          name={routeNames.AUTH}
+          component={Auth}
+          options={{ headerShown: false }}
+        />
         <AuthStack.Screen
           name={routeNames.FORGOT_PASSWORD}
           component={ForgotPassword}
@@ -95,12 +99,24 @@ const DashboardTabNavigator = () => {
 };
 
 const Routes = forwardRef(() => {
+  const { isLoggedIn } = useUserStore();
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="AUTH">
-        <Stack.Screen name="AUTH" component={AuthStackNavigator} />
-        <Stack.Screen name="ONBOARDING" component={OnboardingStackNavigator} />
-        <Stack.Screen name="DASHBOARD" component={DashboardTabNavigator} />
+      <Stack.Navigator
+        initialRouteName="AUTH"
+        screenOptions={{ headerShown: false }}
+      >
+        {!isLoggedIn ? (
+          <Stack.Screen name="AUTH" component={AuthStackNavigator} />
+        ) : (
+          <>
+            <Stack.Screen
+              name="ONBOARDING"
+              component={OnboardingStackNavigator}
+            />
+            <Stack.Screen name="DASHBOARD" component={DashboardTabNavigator} />
+          </>
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );
