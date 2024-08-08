@@ -98,8 +98,7 @@ const DashboardTabNavigator = () => {
 };
 
 const Routes = forwardRef(() => {
-  // const { isLoggedIn } = useUserStore();
-  const isLoggedIn =true
+  const { isLoggedIn } = useUserStore();
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -110,10 +109,10 @@ const Routes = forwardRef(() => {
           <Stack.Screen name="AUTH" component={AuthStackNavigator} />
         ) : (
           <>
-            {/* <Stack.Screen
+            <Stack.Screen
               name="ONBOARDING"
               component={OnboardingStackNavigator}
-            /> */}
+            />
             <Stack.Screen name="DASHBOARD" component={DashboardTabNavigator} />
           </>
         )}
