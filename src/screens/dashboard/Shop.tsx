@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import ProductCatalog from "../../components/productCatalog";
 import { IProductCatalog } from "../../types/Shop";
 
-const Container = styled.SafeAreaView`
+const Container = styled.ScrollView`
   flex: 1;
   background-color: #fff;
   padding: 20px;
@@ -121,6 +121,19 @@ export default () => {
       </OfferContainer>
       <ProductContainer>
         <ProductCategory>Sports DRESSES</ProductCategory>
+        <ProductList
+          data={dummyProducts}
+          keyExtractor={(item: IProductCatalog) => item.productId.toString()}
+          renderItem={({ item }) => <ProductCatalog data={item} />}
+          showsHorizontalScrollIndicator={false}
+          // contentContainerStyle={{ paddingHorizontal: 10 }}
+          horizontal
+          ItemSeparatorComponent={() => <View style={{ width: 10 }} />} // Space between items
+        />
+      </ProductContainer>
+
+      <ProductContainer>
+        <ProductCategory>Sports gears</ProductCategory>
         <ProductList
           data={dummyProducts}
           keyExtractor={(item: IProductCatalog) => item.productId.toString()}
