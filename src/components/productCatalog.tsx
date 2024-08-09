@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import React from "react";
-import { IProductCatalog } from "../types/Shop";
+import { Product } from "../types/Shop";
 
 const ProductContainer = styled.TouchableOpacity`
   height: 250px;
@@ -47,7 +47,7 @@ const MaxPrice = styled.Text`
 const ProductCatalog = ({
   data: { title, imageURL, description, minPrice, maxPrice },
 }: {
-  data: IProductCatalog;
+  data: Product;
 }) => {
   return (
     <ProductContainer>

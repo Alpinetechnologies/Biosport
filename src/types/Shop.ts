@@ -1,4 +1,4 @@
-export interface IProductCatalog {
+export interface Product {
   productId: number;
   imageURL: string;
   title: string;
