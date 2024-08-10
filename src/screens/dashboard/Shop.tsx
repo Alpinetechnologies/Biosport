@@ -19,7 +19,7 @@ import { dummyProducts } from "../../temp/shop";
 
 export default () => {
   return (
-    <Container>
+    <Container contentContainerStyle={{ paddingBottom: 30 }}>
       <OfferContainer>
         <OfferImage
           source={{

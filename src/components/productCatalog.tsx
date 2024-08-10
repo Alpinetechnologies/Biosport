@@ -56,8 +56,12 @@ const ProductCatalog = ({
           uri: imageURL,
         }}
       />
-      <Title>{title}</Title>
-      <Description>{description}</Description>
+      <Title numberOfLines={1} ellipsizeMode="tail">
+        {title}
+      </Title>
+      <Description numberOfLines={1} ellipsizeMode="tail">
+        {description}
+      </Description>
       <PriceContainer>
         <MinPrice>{minPrice}</MinPrice>
         <MaxPrice>{maxPrice}</MaxPrice>
