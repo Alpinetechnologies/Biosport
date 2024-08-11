@@ -16,8 +16,11 @@ import {
 import ProductCatalog from "../../components/productCatalog";
 import { Product } from "../../types/Shop";
 import { dummyProducts } from "../../temp/shop";
+import { useNavigation } from "@react-navigation/native";
+import { routeNames } from "../../navigation/routeNames";
 
 export default () => {
+  const navigation = useNavigation();
   return (
     <Container contentContainerStyle={{ paddingBottom: 30 }}>
       <OfferContainer>
@@ -42,8 +45,16 @@ export default () => {
         <ProductList
           data={dummyProducts}
           keyExtractor={(item: Product) => item.productId.toString()}
-          renderItem={({ item }) => <ProductCatalog data={item} />}
-          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }: { item: Product }) => (
+            <ProductCatalog
+              data={item}
+              onPress={() => {
+                navigation.navigate(routeNames.PRODUCT_DETAILS, {
+                  id: item?.productId,
+                });
+              }}
+            />
+          )}
           // contentContainerStyle={{ paddingHorizontal: 10 }}
           horizontal
           ItemSeparatorComponent={() => <View style={{ width: 10 }} />} // Space between items
@@ -55,9 +66,10 @@ export default () => {
         <ProductList
           data={dummyProducts}
           keyExtractor={(item: Product) => item.productId.toString()}
-          renderItem={({ item }) => <ProductCatalog data={item} />}
+          renderItem={({ item }: { item: Product }) => (
+            <ProductCatalog data={item} />
+          )}
           showsHorizontalScrollIndicator={false}
-          // contentContainerStyle={{ paddingHorizontal: 10 }}
           horizontal
           ItemSeparatorComponent={() => <View style={{ width: 10 }} />} // Space between items
         />

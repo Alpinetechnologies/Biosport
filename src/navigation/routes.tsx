@@ -19,11 +19,13 @@ import Logs from "../screens/dashboard/Logs";
 import Consultation from "../screens/dashboard/Consultation";
 import Goals from "../screens/onboarding/Goals";
 import { useUserStore } from "../store";
+import ProductDetails from "../screens/dashboard/ProductDetails";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
 const OnboardingStack = createNativeStackNavigator();
 const DashboardTabs = createBottomTabNavigator();
+const ShopStack = createNativeStackNavigator();
 
 const AuthStackNavigator = () => {
   return (
@@ -86,7 +88,10 @@ const DashboardTabNavigator = () => {
     <>
       <DashboardTabs.Navigator initialRouteName={routeNames.HOME}>
         <DashboardTabs.Screen name={routeNames.HOME} component={Home} />
-        <DashboardTabs.Screen name={routeNames.SHOP} component={Shop} />
+        <DashboardTabs.Screen
+          name={routeNames.SHOP}
+          component={ShopStackNavigator}
+        />
         <DashboardTabs.Screen name={routeNames.LOGS} component={Logs} />
         <DashboardTabs.Screen
           name={routeNames.CONSULTATION}
@@ -97,8 +102,22 @@ const DashboardTabNavigator = () => {
   );
 };
 
+const ShopStackNavigator = () => {
+  return (
+    <ShopStack.Navigator screenOptions={{ headerShown: false }}>
+      <ShopStack.Screen name={"SHOP_TAB"} component={Shop} />
+      <ShopStack.Screen
+        name={routeNames.PRODUCT_DETAILS}
+        component={ProductDetails}
+        options={{}}
+      />
+    </ShopStack.Navigator>
+  );
+};
+
 const Routes = forwardRef(() => {
-  const { isLoggedIn } = useUserStore();
+  // const { isLoggedIn } = useUserStore();
+  const isLoggedIn = true;
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -109,10 +128,10 @@ const Routes = forwardRef(() => {
           <Stack.Screen name="AUTH" component={AuthStackNavigator} />
         ) : (
           <>
-            <Stack.Screen
+            {/* <Stack.Screen
               name="ONBOARDING"
               component={OnboardingStackNavigator}
-            />
+            /> */}
             <Stack.Screen name="DASHBOARD" component={DashboardTabNavigator} />
           </>
         )}

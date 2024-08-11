@@ -5,6 +5,7 @@ const dashboardRouteNames = {
   SHOP: "SHOP",
   CART: "CART",
   CHECKOUT: "CHECKOUT",
+  PRODUCT_DETAILS: "PRODUCT_DETAILS",
 
   // Logs
   LOGS: "LOGS",

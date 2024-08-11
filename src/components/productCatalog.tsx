@@ -46,11 +46,13 @@ const MaxPrice = styled.Text`
 
 const ProductCatalog = ({
   data: { title, imageURL, description, minPrice, maxPrice },
+  onPress,
 }: {
   data: Product;
+  onPress: () => void;
 }) => {
   return (
-    <ProductContainer>
+    <ProductContainer onPress={onPress}>
       <Image
         source={{
           uri: imageURL,
