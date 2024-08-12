@@ -96,6 +96,9 @@ const DashboardTabNavigator = () => {
         <DashboardTabs.Screen
           name={routeNames.CONSULTATION}
           component={Consultation}
+          options={{
+            title: "BIO SPORTS BOT",
+          }}
         />
       </DashboardTabs.Navigator>
     </>
@@ -109,7 +112,6 @@ const ShopStackNavigator = () => {
       <ShopStack.Screen
         name={routeNames.PRODUCT_DETAILS}
         component={ProductDetails}
-        options={{}}
       />
     </ShopStack.Navigator>
   );

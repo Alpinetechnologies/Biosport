@@ -67,7 +67,14 @@ export default () => {
           data={dummyProducts}
           keyExtractor={(item: Product) => item.productId.toString()}
           renderItem={({ item }: { item: Product }) => (
-            <ProductCatalog data={item} />
+            <ProductCatalog
+              data={item}
+              onPress={() => {
+                navigation.navigate(routeNames.PRODUCT_DETAILS, {
+                  id: item?.productId,
+                });
+              }}
+            />
           )}
           showsHorizontalScrollIndicator={false}
           horizontal
