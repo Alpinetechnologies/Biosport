@@ -7,7 +7,6 @@ import Personalization from '../screens/auth/pitch/Personalization';
 import BioFitScore from '../screens/auth/pitch/BioFitScore';
 import ImproveAndWin from '../screens/auth/pitch/ImproveAndWin';
 import Auth from '../screens/auth/Auth/Auth';
-import SignUp from '../screens/auth/SignUp/SignUp';
 import ForgotPassword from '../screens/auth/ForgotPassword/ForgotPassword';
 import OTP from '../screens/auth/OTP/OTP';
 import BasicInformation from '../screens/onboarding/BasicInformation';
@@ -103,11 +102,11 @@ const Routes = forwardRef(() => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="AUTH"
+        initialRouteName="AUTH_ROUTES"
         screenOptions={{ headerShown: false }}
       >
         {!isLoggedIn ? (
-          <Stack.Screen name="AUTH" component={AuthStackNavigator} />
+          <Stack.Screen name="AUTH_ROUTES" component={AuthStackNavigator} />
         ) : (
           <>
             <Stack.Screen
