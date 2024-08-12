@@ -1,4 +1,4 @@
-import { NavigationContainer, ThemeProvider } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { forwardRef, memo } from "react";
@@ -18,8 +18,8 @@ import Shop from "../screens/dashboard/Shop";
 import Logs from "../screens/dashboard/Logs";
 import Consultation from "../screens/dashboard/Consultation";
 import Goals from "../screens/onboarding/Goals";
-import { useUserStore } from "../store";
 import ProductDetails from "../screens/dashboard/ProductDetails";
+
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -122,11 +122,11 @@ const Routes = forwardRef(() => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="AUTH"
+        initialRouteName="AUTH_ROUTES"
         screenOptions={{ headerShown: false }}
       >
         {!isLoggedIn ? (
-          <Stack.Screen name="AUTH" component={AuthStackNavigator} />
+          <Stack.Screen name="AUTH_ROUTES" component={AuthStackNavigator} />
         ) : (
           <>
             <Stack.Screen
