@@ -89,8 +89,9 @@ const DashboardTabNavigator = () => {
       <DashboardTabs.Navigator initialRouteName={routeNames.HOME}>
         <DashboardTabs.Screen name={routeNames.HOME} component={Home} />
         <DashboardTabs.Screen
-          name={routeNames.SHOP}
+          name={'SHOP_TAB'}
           component={ShopStackNavigator}
+          options={{headerShown: false}}
         />
         <DashboardTabs.Screen name={routeNames.LOGS} component={Logs} />
         <DashboardTabs.Screen
@@ -105,11 +106,11 @@ const DashboardTabNavigator = () => {
 const ShopStackNavigator = () => {
   return (
     <ShopStack.Navigator screenOptions={{ headerShown: false }}>
-      <ShopStack.Screen name={"SHOP_TAB"} component={Shop} />
+      <ShopStack.Screen name={routeNames.SHOP} component={Shop} />
       <ShopStack.Screen
         name={routeNames.PRODUCT_DETAILS}
         component={ProductDetails}
-        options={{}}
+        options={{headerShown: false}}
       />
     </ShopStack.Navigator>
   );
@@ -128,10 +129,11 @@ const Routes = forwardRef(() => {
           <Stack.Screen name="AUTH" component={AuthStackNavigator} />
         ) : (
           <>
-            {/* <Stack.Screen
+            <Stack.Screen
               name="ONBOARDING"
               component={OnboardingStackNavigator}
-            /> */}
+              options={{headerShown: false}}
+            />
             <Stack.Screen name="DASHBOARD" component={DashboardTabNavigator} />
           </>
         )}
