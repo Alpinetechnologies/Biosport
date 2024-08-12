@@ -20,6 +20,7 @@ import Consultation from '../screens/dashboard/Consultation';
 import Goals from '../screens/onboarding/Goals';
 import { useUserStore } from '../store';
 
+
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
 const OnboardingStack = createNativeStackNavigator();
@@ -31,7 +32,7 @@ const AuthStackNavigator = () => {
       <AuthStack.Navigator initialRouteName={routeNames.AUTH}>
         {/* Pitch */}
         <AuthStack.Screen
-          name={routeNames.PERSONLIZATION}
+          name={routeNames.PERSONALIZATION}
           component={Personalization}
         />
         <AuthStack.Screen
@@ -121,6 +122,6 @@ const Routes = forwardRef(() => {
   );
 });
 
-Routes.displayName = 'Routes';
+Routes.displayName = "Routes";
 
 export default memo(Routes);

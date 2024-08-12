@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -7,8 +7,8 @@ import {
   ImageBackground,
   SafeAreaView,
   ScrollView,
-} from 'react-native';
-import styled from 'styled-components/native';
+} from "react-native";
+import styled from "styled-components/native";
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -77,7 +77,7 @@ const ToggleButton = styled.TouchableOpacity<{ active: boolean }>`
   flex: 1;
   padding: 10px;
   border-radius: 20px;
-  background-color: ${(props) => (props.active ? '#fff' : 'transparent')};
+  background-color: ${(props) => (props.active ? "#fff" : "transparent")};
   align-items: center;
 `;
 
@@ -103,17 +103,17 @@ const SocialIcon = styled.Image`
 `;
 
 const LoginScreen = () => {
-  const [activeTab, setActiveTab] = useState('login');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+  const [activeTab, setActiveTab] = useState("login");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(true);
 
   return (
     <Container>
       <BackgroundImage
         source={{
-          uri: 'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?q=80&w=5377&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          uri: "https://images.unsplash.com/photo-1607962837359-5e7e89f86776?q=80&w=5377&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         }}
       >
         <ContentContainer>
@@ -124,20 +124,20 @@ const LoginScreen = () => {
             </Subtitle>
             <ToggleContainer>
               <ToggleButton
-                active={activeTab === 'login'}
-                onPress={() => setActiveTab('login')}
+                active={activeTab === "login"}
+                onPress={() => setActiveTab("login")}
               >
                 <Text>Login</Text>
               </ToggleButton>
               <ToggleButton
-                active={activeTab === 'signup'}
-                onPress={() => setActiveTab('signup')}
+                active={activeTab === "signup"}
+                onPress={() => setActiveTab("signup")}
               >
                 <Text>Sign Up</Text>
               </ToggleButton>
             </ToggleContainer>
 
-            {activeTab === 'login' ? (
+            {activeTab === "login" ? (
               <>
                 <Input
                   placeholder="Enter Email"
@@ -155,7 +155,7 @@ const LoginScreen = () => {
                   onPress={() => setIsPasswordVisible(!isPasswordVisible)}
                 >
                   <Text>
-                    {isPasswordVisible ? 'Show Password' : 'Hide Password'}
+                    {isPasswordVisible ? "Show Password" : "Hide Password"}
                   </Text>
                 </TouchableOpacity>
                 <Button>
@@ -188,16 +188,16 @@ const LoginScreen = () => {
             )}
 
             <HelpText>
-              Trouble In Signing In?{' '}
-              <Text style={{ color: 'blue' }}>Need help</Text>
+              Trouble In Signing In?{" "}
+              <Text style={{ color: "blue" }}>Need help</Text>
             </HelpText>
 
             <SocialLoginContainer>
               <SocialButton>
-                <SocialIcon source={{ uri: 'google_icon_url_here' }} />
+                <SocialIcon source={{ uri: "google_icon_url_here" }} />
               </SocialButton>
               <SocialButton>
-                <SocialIcon source={{ uri: 'apple_icon_url_here' }} />
+                <SocialIcon source={{ uri: "apple_icon_url_here" }} />
               </SocialButton>
             </SocialLoginContainer>
           </ScrollView>
