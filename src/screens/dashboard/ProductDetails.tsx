@@ -4,7 +4,6 @@ import {
   Container,
   CarouselContainer,
   PriceContainer,
-  Image,
   FeatureContainer,
   ProductName,
   Size,
@@ -15,8 +14,13 @@ import {
   TotalAmount,
   CartText,
   AddToCart,
+  BackButton,
+  BackButtonIcon,
+  BackButtonText,
 } from "./productDetails.styled";
 import { useNavigation } from "@react-navigation/native";
+import Carousel from "../../components/Carousel";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default ({ route }) => {
   const { id } = route.params;
@@ -38,15 +42,19 @@ export default ({ route }) => {
       });
     };
   }, []);
+  const img =
+    "https://s3-alpha-sig.figma.com/img/fddf/7cc0/8d7f8df4139808a2f0df294709a951da?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=f5~3ULTcfqFnZzWs7Tb4MoL5MNi2DXqdJNPSRQiE9NBQfB~y3Oql0JDo~wote26tAljafGpdtxSJJvUjMLgdJVAKya3ivTd7dO4stLZ-UvWS~fWFR6B-NPtsragZvBemBI4QbBCU3EYw5kT57QbF7yN5px~quA4x9qKk8BBdZ46H8THsnZBM-3qFcjeEq9eWTKup1cXyNL~2iV9KTxIHktDTMooBmILpRqnwlqWqHdyslE5K8zjb1FhAdCzAoucxTZKEPb-N~oHUM47o9MSTzZQlGbm1gR~84N30-DN2jfVHKZdlVxoAi4SCupVtjqmNuvRmCGHm5Y4HCukjRGkLmA__";
 
   return (
     <Container>
       <CarouselContainer>
-        <Image
-          source={{
-            uri: "https://s3-alpha-sig.figma.com/img/fddf/7cc0/8d7f8df4139808a2f0df294709a951da?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=f5~3ULTcfqFnZzWs7Tb4MoL5MNi2DXqdJNPSRQiE9NBQfB~y3Oql0JDo~wote26tAljafGpdtxSJJvUjMLgdJVAKya3ivTd7dO4stLZ-UvWS~fWFR6B-NPtsragZvBemBI4QbBCU3EYw5kT57QbF7yN5px~quA4x9qKk8BBdZ46H8THsnZBM-3qFcjeEq9eWTKup1cXyNL~2iV9KTxIHktDTMooBmILpRqnwlqWqHdyslE5K8zjb1FhAdCzAoucxTZKEPb-N~oHUM47o9MSTzZQlGbm1gR~84N30-DN2jfVHKZdlVxoAi4SCupVtjqmNuvRmCGHm5Y4HCukjRGkLmA__",
-          }}
-        />
+        <BackButton onPress={() => navigation.goBack()}>
+          <BackButtonIcon>
+            <Ionicons name="arrow-back" size={18} color="black" />
+          </BackButtonIcon>
+          <BackButtonText>Snap And Track</BackButtonText>
+        </BackButton>
+        <Carousel items={[{ image: img }, { image: img }, { image: img }]} />
       </CarouselContainer>
       <FeatureContainer>
         <ProductName> Fashionable Man’s Sneakers</ProductName>

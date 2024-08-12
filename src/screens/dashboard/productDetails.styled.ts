@@ -1,14 +1,8 @@
 import styled from "styled-components/native";
-import { Dimensions } from "react-native";
-const { height } = Dimensions.get("window");
 
 export const Container = styled.View`
   flex: 1;
   background-color: #fff;
-`;
-
-export const Title = styled.Text`
-  color: black;
 `;
 
 export const CarouselContainer = styled.View`
@@ -80,4 +74,27 @@ export const AddToCart = styled.TouchableOpacity`
 `;
 export const CartText = styled.Text`
   font-weight: 700;
+`;
+
+export const BackButton = styled.TouchableOpacity`
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  z-index: 1;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+`;
+
+export const BackButtonIcon = styled.Text`
+  border-radius: 20px;
+  color: #fff;
+  background-color: #fff9e6;
+  padding: 6px;
+`;
+
+export const BackButtonText = styled.Text`
+  font-size: 16px;
+  color: #fff9e6;
+  margin-left: 8px;
 `;

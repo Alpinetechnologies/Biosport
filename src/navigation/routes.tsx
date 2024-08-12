@@ -1,4 +1,4 @@
-import { NavigationContainer, ThemeProvider } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { forwardRef, memo } from "react";
@@ -18,7 +18,6 @@ import Shop from "../screens/dashboard/Shop";
 import Logs from "../screens/dashboard/Logs";
 import Consultation from "../screens/dashboard/Consultation";
 import Goals from "../screens/onboarding/Goals";
-import { useUserStore } from "../store";
 import ProductDetails from "../screens/dashboard/ProductDetails";
 
 const Stack = createNativeStackNavigator();
@@ -91,6 +90,7 @@ const DashboardTabNavigator = () => {
         <DashboardTabs.Screen
           name={routeNames.SHOP}
           component={ShopStackNavigator}
+          options={{ headerShown: false }}
         />
         <DashboardTabs.Screen name={routeNames.LOGS} component={Logs} />
         <DashboardTabs.Screen
@@ -108,10 +108,15 @@ const DashboardTabNavigator = () => {
 const ShopStackNavigator = () => {
   return (
     <ShopStack.Navigator screenOptions={{ headerShown: false }}>
-      <ShopStack.Screen name={"SHOP_TAB"} component={Shop} />
+      <ShopStack.Screen
+        name={"SHOP_TAB"}
+        component={Shop}
+        options={{ headerShown: true, title: "SHOP" }}
+      />
       <ShopStack.Screen
         name={routeNames.PRODUCT_DETAILS}
         component={ProductDetails}
+        options={{ headerShown: false }}
       />
     </ShopStack.Navigator>
   );
@@ -123,16 +128,17 @@ const Routes = forwardRef(() => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="AUTH"
+        initialRouteName="AUTH_ROUTES"
         screenOptions={{ headerShown: false }}
       >
         {!isLoggedIn ? (
-          <Stack.Screen name="AUTH" component={AuthStackNavigator} />
+          <Stack.Screen name="AUTH_ROUTES" component={AuthStackNavigator} />
         ) : (
           <>
             {/* <Stack.Screen
               name="ONBOARDING"
               component={OnboardingStackNavigator}
+              options={{ headerShown: false }}
             /> */}
             <Stack.Screen name="DASHBOARD" component={DashboardTabNavigator} />
           </>
