@@ -13,9 +13,9 @@ import {
   ProductList,
 } from "./Shop.styled";
 
-import ProductCatalog from "../../components/productCatalog";
-import { Product } from "../../types/Shop";
-import { dummyProducts } from "../../temp/shop";
+import ProductCatalog from "../../../components/productCatalog";
+import { Product } from "../../../types/Shop";
+import { dummyProducts } from "../../../temp/shop";
 
 export default () => {
   return (

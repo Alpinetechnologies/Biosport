@@ -14,7 +14,7 @@ import BMI from '../screens/onboarding/BMI';
 import Address from '../screens/onboarding/Address';
 import Permissions from '../screens/onboarding/Permissions';
 import Home from '../screens/dashboard/Home';
-import Shop from '../screens/dashboard/Shop';
+import Shop from '../screens/dashboard/Shop/Shop';
 import Logs from '../screens/dashboard/Logs';
 import Consultation from '../screens/dashboard/Consultation';
 import Goals from '../screens/onboarding/Goals';
@@ -100,6 +100,7 @@ const DashboardTabNavigator = () => {
 
 const Routes = forwardRef(() => {
   const { isLoggedIn } = useUserStore();
+
   return (
     <NavigationContainer>
       <Stack.Navigator
