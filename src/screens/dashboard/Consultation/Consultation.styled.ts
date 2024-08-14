@@ -6,7 +6,7 @@ export const Container = styled.View`
   padding: 20px;
 `;
 
-export const ChatContainer = styled.View`
+export const ChatContainer = styled.TouchableOpacity`
   border: 1px solid #eeeeee;
   margin-top: 20px;
   flex-direction: row;

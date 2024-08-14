@@ -16,16 +16,18 @@ import Permissions from "../screens/onboarding/Permissions";
 import Home from "../screens/dashboard/Home";
 import Shop from "../screens/dashboard/Shop/Shop";
 import Logs from "../screens/dashboard/Logs";
-import Consultation from "../screens/dashboard/Consultation";
+import Consultation from "../screens/dashboard/Consultation/Consultation";
 import Goals from "../screens/onboarding/Goals";
 import { useUserStore } from "../store";
 import ProductDetails from "../screens/dashboard/Shop/ProductDetails";
+import BookingChat from "../screens/dashboard/Consultation/BookingChat";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
 const OnboardingStack = createNativeStackNavigator();
 const DashboardTabs = createBottomTabNavigator();
 const ShopStack = createNativeStackNavigator();
+const ConsulationStack = createNativeStackNavigator();
 
 const AuthStackNavigator = () => {
   return (
@@ -96,10 +98,12 @@ const DashboardTabNavigator = () => {
         <DashboardTabs.Screen name={routeNames.LOGS} component={Logs} />
         <DashboardTabs.Screen
           name={routeNames.CONSULTATION}
-          component={Consultation}
-          options={{
-            title: "BIO SPORTS BOT",
-          }}
+          component={ConsulationStackNavigator}
+          options={{ headerShown: false }}
+          // options={{
+          //   // title: "BIO SPORTS BOT",
+          //   tabBarLabel: "CONSULTATION",
+          // }}
         />
       </DashboardTabs.Navigator>
     </>
@@ -120,6 +124,24 @@ const ShopStackNavigator = () => {
         options={{ headerShown: false }}
       />
     </ShopStack.Navigator>
+  );
+};
+
+const ConsulationStackNavigator = () => {
+  return (
+    <ConsulationStack.Navigator screenOptions={{ headerShown: false }}>
+      <ConsulationStack.Screen
+        name={"CONSULATION_TAB"}
+        component={Consultation}
+        options={{ headerShown: true, title: "BIO SPORTS BOT" }}
+      ></ConsulationStack.Screen>
+
+      <ConsulationStack.Screen
+        name={routeNames.CONSULTATION_BOOKING_CHAT}
+        component={BookingChat}
+        options={{ headerShown: false }}
+      ></ConsulationStack.Screen>
+    </ConsulationStack.Navigator>
   );
 };
 

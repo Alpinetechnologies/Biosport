@@ -13,18 +13,19 @@ interface ActiveTextProps extends TextProps {
 const TabContainer = styled.View`
   flex-direction: row;
   margin-right: 5px;
+  gap: 5px;
 `;
 
 const TabButton = styled.TouchableOpacity<RoundOptionProps>`
   flex: 1;
-  padding: 10px 20px;
+  padding: 10px 15px;
   background-color: ${(props) => (props.active ? "#ECF5FF" : "#F7F7F7")};
   border-radius: 20px;
   align-items: center;
 `;
 
 const TabText = styled.Text<ActiveTextProps>`
-  font-size: 16px;
+  font-size: 12px;
   color: ${(props) => (props.active ? "#1A96F0" : "#757575")};
 `;
 
