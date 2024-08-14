@@ -1,4 +1,4 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, ThemeProvider } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { forwardRef, memo } from "react";
@@ -14,11 +14,12 @@ import BMI from "../screens/onboarding/BMI";
 import Address from "../screens/onboarding/Address";
 import Permissions from "../screens/onboarding/Permissions";
 import Home from "../screens/dashboard/Home";
-import Shop from "../screens/dashboard/Shop";
+import Shop from "../screens/dashboard/Shop/Shop";
 import Logs from "../screens/dashboard/Logs";
 import Consultation from "../screens/dashboard/Consultation";
 import Goals from "../screens/onboarding/Goals";
-import ProductDetails from "../screens/dashboard/ProductDetails";
+import { useUserStore } from "../store";
+import ProductDetails from "../screens/dashboard/Shop/ProductDetails";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -125,6 +126,7 @@ const ShopStackNavigator = () => {
 const Routes = forwardRef(() => {
   // const { isLoggedIn } = useUserStore();
   const isLoggedIn = true;
+
   return (
     <NavigationContainer>
       <Stack.Navigator

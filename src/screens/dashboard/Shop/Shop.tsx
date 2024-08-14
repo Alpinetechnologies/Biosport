@@ -13,11 +13,11 @@ import {
   ProductList,
 } from "./Shop.styled";
 
-import ProductCatalog from "../../components/productCatalog";
-import { Product } from "../../types/Shop";
-import { dummyProducts } from "../../temp/shop";
+import ProductCatalog from "../../../components/productCatalog";
+import { Product } from "../../../types/Shop";
+import { dummyProducts } from "../../../temp/shop";
 import { useNavigation } from "@react-navigation/native";
-import { routeNames } from "../../navigation/routeNames";
+import { routeNames } from "../../../navigation/routeNames";
 
 export default () => {
   const navigation = useNavigation();
@@ -55,7 +55,6 @@ export default () => {
               }}
             />
           )}
-          // contentContainerStyle={{ paddingHorizontal: 10 }}
           horizontal
           ItemSeparatorComponent={() => <View style={{ width: 10 }} />} // Space between items
         />
