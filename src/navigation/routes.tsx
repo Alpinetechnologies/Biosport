@@ -20,7 +20,7 @@ import Consultation from "../screens/dashboard/Consultation/Consultation";
 import Goals from "../screens/onboarding/Goals";
 import { useUserStore } from "../store";
 import ProductDetails from "../screens/dashboard/Shop/ProductDetails";
-import BookingChat from "../screens/dashboard/Consultation/BookingChat";
+import BookingChat from "../screens/dashboard/Consultation/BookingChat/BookingChat";
 import BookConsultation from "../screens/dashboard/Consultation/BookConsultation/BookConsultation";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";

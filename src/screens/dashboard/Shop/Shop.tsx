@@ -13,7 +13,7 @@ import {
   ProductList,
 } from "./Shop.styled";
 
-import ProductCatalog from "../../../components/productCatalog";
+import ProductCatalog from "../../../components/ProductCatalog/ProductCatalog";
 import { Product } from "../../../types/Shop";
 import { dummyProducts } from "../../../temp/shop";
 import { useNavigation } from "@react-navigation/native";

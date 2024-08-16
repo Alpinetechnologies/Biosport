@@ -34,7 +34,7 @@ import {
   FileUpload,
 } from "./BookingChat.styled";
 import { View } from "react-native";
-import { routeNames } from "../../../navigation/routeNames";
+import { routeNames } from "../../../../navigation/routeNames";
 
 const BookingChat = ({ navigation }) => {
   const [messages, setMessages] = useState([

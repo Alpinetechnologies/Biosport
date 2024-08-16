@@ -8,7 +8,7 @@ import {
   DescriptionInfo,
   Time,
 } from "./Consultation.styled";
-import Tabs from "../../../components/TabContainer";
+import Tabs from "../../../components/Tabs/Tabs";
 import { useNavigation } from "@react-navigation/native";
 import { routeNames } from "../../../navigation/routeNames";
 export default function () {

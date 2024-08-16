@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Container,
   CarouselContainer,
@@ -19,8 +19,8 @@ import {
 } from "./productDetails.styled";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import Carousel from "../../../components/Carousel";
-import { OptionSelector } from "../../../components/optionSelector";
+import Carousel from "../../../components/Carousel/Carousel";
+import { OptionSelector } from "../../../components/OptionSelector/OptionSelector";
 
 export default ({ route }) => {
   const { id } = route.params;
