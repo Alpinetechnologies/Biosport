@@ -21,6 +21,9 @@ import Goals from "../screens/onboarding/Goals";
 import { useUserStore } from "../store";
 import ProductDetails from "../screens/dashboard/Shop/ProductDetails";
 import BookingChat from "../screens/dashboard/Consultation/BookingChat";
+import BookConsultation from "../screens/dashboard/Consultation/BookConsultation/BookConsultation";
+import { TouchableOpacity } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -127,7 +130,7 @@ const ShopStackNavigator = () => {
   );
 };
 
-const ConsulationStackNavigator = () => {
+const ConsulationStackNavigator = ({ navigation }) => {
   return (
     <ConsulationStack.Navigator screenOptions={{ headerShown: false }}>
       <ConsulationStack.Screen
@@ -140,6 +143,17 @@ const ConsulationStackNavigator = () => {
         name={routeNames.CONSULTATION_BOOKING_CHAT}
         component={BookingChat}
         options={{ headerShown: false }}
+      ></ConsulationStack.Screen>
+      <ConsulationStack.Screen
+        name={routeNames.CONSULTATION_BOOK}
+        component={BookConsultation}
+        options={{
+          headerShown: true,
+          title: "BOOK CONSULATION",
+          headerTitleStyle: {
+            fontSize: 18,
+          },
+        }}
       ></ConsulationStack.Screen>
     </ConsulationStack.Navigator>
   );

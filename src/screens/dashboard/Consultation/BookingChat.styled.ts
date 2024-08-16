@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import { Ionicons } from "@expo/vector-icons";
 
 export const ChatContainer = styled.View`
   flex: 1;

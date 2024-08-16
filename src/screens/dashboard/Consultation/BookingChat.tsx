@@ -34,6 +34,7 @@ import {
   FileUpload,
 } from "./BookingChat.styled";
 import { View } from "react-native";
+import { routeNames } from "../../../navigation/routeNames";
 
 const BookingChat = ({ navigation }) => {
   const [messages, setMessages] = useState([
@@ -133,7 +134,11 @@ const BookingChat = ({ navigation }) => {
                   {message?.info?.skills.map((val) => <Skill>{val}</Skill>)}
                 </SkillContainer>
                 <ExpertDescription>{message?.info?.desc}</ExpertDescription>
-                <BookAppointment>
+                <BookAppointment
+                  onPress={() =>
+                    navigation.navigate(routeNames.CONSULTATION_BOOK)
+                  }
+                >
                   <AppointmentText>Book Your Appointment</AppointmentText>
                 </BookAppointment>
               </ExpertContainer>
