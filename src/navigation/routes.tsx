@@ -24,6 +24,7 @@ import BookingChat from "../screens/dashboard/Consultation/BookingChat/BookingCh
 import BookConsultation from "../screens/dashboard/Consultation/BookConsultation/BookConsultation";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import BookingSucess from "../screens/dashboard/Consultation/BookingSuccess/BookingSucess";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -103,10 +104,6 @@ const DashboardTabNavigator = () => {
           name={routeNames.CONSULTATION}
           component={ConsulationStackNavigator}
           options={{ headerShown: false }}
-          // options={{
-          //   // title: "BIO SPORTS BOT",
-          //   tabBarLabel: "CONSULTATION",
-          // }}
         />
       </DashboardTabs.Navigator>
     </>
@@ -155,6 +152,14 @@ const ConsulationStackNavigator = ({ navigation }) => {
           },
         }}
       ></ConsulationStack.Screen>
+
+      <ConsulationStack.Screen
+        name={routeNames.CONSULTATION_BOOKING_SUCCESS}
+        component={BookingSucess}
+        options={{
+          headerShown: false,
+        }}
+      />
     </ConsulationStack.Navigator>
   );
 };

@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import DatePicker from "../../../../components/DatePicker/DatePicker";
 import {
   Container,
@@ -18,9 +19,11 @@ import {
 } from "./BookConsultion.styled";
 
 import React, { useState } from "react";
+import { routeNames } from "../../../../navigation/routeNames";
 
 const BookConsultation = () => {
   const [selectedTime, setSelectedTime] = useState(0);
+  const navigation = useNavigation();
   return (
     <Container>
       <ExpertContainer>
@@ -56,7 +59,11 @@ const BookConsultation = () => {
           ))}
         </OptionContainer>
       </HourContainer>
-      <PaymentContainer>
+      <PaymentContainer
+        onPress={() =>
+          navigation.navigate(routeNames.CONSULTATION_BOOKING_SUCCESS)
+        }
+      >
         <Amount>Pay $100</Amount>
       </PaymentContainer>
     </Container>
