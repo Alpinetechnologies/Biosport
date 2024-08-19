@@ -23,7 +23,7 @@ export const Image = styled.Image`
   border-color: #ccc;
 `;
 
-export const DescriptionConatiner = styled.View``;
+export const DescriptionContainer = styled.View``;
 
 export const DescriptionTitle = styled.Text``;
 

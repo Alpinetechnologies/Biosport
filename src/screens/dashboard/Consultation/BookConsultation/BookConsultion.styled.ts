@@ -26,7 +26,7 @@ export const ExpertContainer = styled.View`
   elevation: 4;
   margin-bottom: 10px;
 `;
-export const ProfileConatiner = styled.View`
+export const ProfileContainer = styled.View`
   flex-direction: row;
   gap: 10px;
   align-items: center;

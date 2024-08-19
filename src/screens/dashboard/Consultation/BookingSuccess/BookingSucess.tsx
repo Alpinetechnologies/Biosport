@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {
-  Conatiner,
-  ImageConatiner,
+  Container,
+  ImageContainer,
   InnerCircle,
   ThankYou,
   Success,
@@ -30,12 +30,12 @@ const BookingSucess = ({ navigation }) => {
     };
   }, []);
   return (
-    <Conatiner>
-      <ImageConatiner>
+    <Container>
+      <ImageContainer>
         <InnerCircle>
           <AntDesign name="check" size={50} color="black" />
         </InnerCircle>
-      </ImageConatiner>
+      </ImageContainer>
       <ThankYou>Thank You!!</ThankYou>
       <Success>Your Appointment is booked Successfully!!</Success>
       <SummaryContainer>
@@ -45,7 +45,7 @@ const BookingSucess = ({ navigation }) => {
       <ViewAppointment>
         <Text>View Appointment</Text>
       </ViewAppointment>
-    </Conatiner>
+    </Container>
   );
 };
 

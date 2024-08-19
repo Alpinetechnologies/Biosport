@@ -3,7 +3,7 @@ import DatePicker from "../../../../components/DatePicker/DatePicker";
 import {
   Container,
   ExpertContainer,
-  ProfileConatiner,
+  ProfileContainer,
   Profile,
   NameContainer,
   Name,
@@ -27,7 +27,7 @@ const BookConsultation = () => {
   return (
     <Container>
       <ExpertContainer>
-        <ProfileConatiner>
+        <ProfileContainer>
           <Profile
             source={{
               uri: "https://s3-alpha-sig.figma.com/img/e781/b355/0e0ea6ec2bafbd2f2cbd4fea9d8f0033?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HBzeIHRp2OSjF3Pa3W8tYLy9SHq1fMGWkqk0ynvGqQIkpXOgePksqBf5ACdRA-Oiao4CdaT0fGNe0cNXKSYGKKsM1bVji1zPNmOKJn9HCnKgV7BC4eCGmQVvOpHZ1tQySXgfhjloqXXY12zs1F498qMDC-xFVU6U~YCiXIa3lNCObFu36OEnw6LVkId8ORk2hf7vCu-erwPIg9~yki19ZMMC3ZAe6a87Kwfz9VYg0WNnAAjmUeXyo2xyyNC07TRyf0J5jZNsnjy72srFI8EjNt2647PZ3BJUW9LcBJoEnLTdNVLCYDfubLgBOAiDcCkLIQ0Q5ToEJUm5dYCE~z4HPw__",
@@ -37,7 +37,7 @@ const BookConsultation = () => {
             <Name>Dr. Kiran</Name>
             <Expert>Expert Physician</Expert>
           </NameContainer>
-        </ProfileConatiner>
+        </ProfileContainer>
         <ExpertDescription>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt
           deleniti tenetur iste, nisi eos! Quisquam rem exercitationem ipsum

@@ -32,7 +32,7 @@ export const ExpertDescription = styled.Text`
 export const TimeContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  margin-top: 10px;
 `;
 export const Time = styled.Text`
   font-size: 12px;
