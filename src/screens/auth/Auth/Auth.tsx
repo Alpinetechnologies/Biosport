@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  ImageBackground,
-  SafeAreaView,
-  ScrollView,
-} from "react-native";
+import { Text, TouchableOpacity, ScrollView } from "react-native";
 import styled from "styled-components/native";
 
 const Container = styled.SafeAreaView`
