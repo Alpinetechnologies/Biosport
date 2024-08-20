@@ -85,11 +85,7 @@ const DashboardTabNavigator = () => {
   return (
     <>
       <DashboardTabs.Navigator initialRouteName={routeNames.HOME}>
-        <DashboardTabs.Screen
-          name={routeNames.HOME}
-          component={Home}
-          options={{ headerShown: false }}
-        />
+        <DashboardTabs.Screen name={routeNames.HOME} component={Home} />
         <DashboardTabs.Screen name={routeNames.SHOP} component={Shop} />
         <DashboardTabs.Screen name={routeNames.LOGS} component={Logs} />
         <DashboardTabs.Screen
@@ -110,14 +106,14 @@ const Routes = forwardRef(() => {
         screenOptions={{ headerShown: false }}
       >
         {!isLoggedIn ? (
-          <Stack.Screen name="DASHBOARD" component={DashboardTabNavigator} />
+          <Stack.Screen name="AUTH_ROUTES" component={AuthStackNavigator} />
         ) : (
           <>
             <Stack.Screen
               name="ONBOARDING"
               component={OnboardingStackNavigator}
             />
-            <Stack.Screen name="AUTH_ROUTES" component={AuthStackNavigator} />
+            <Stack.Screen name="DASHBOARD" component={DashboardTabNavigator} />
           </>
         )}
       </Stack.Navigator>
