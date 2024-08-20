@@ -1,6 +1,12 @@
+import { View, Dimensions, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { Text, TouchableOpacity, ScrollView } from "react-native";
+import { Feather } from "@expo/vector-icons";
 import styled from "styled-components/native";
+import { icons, images } from "../../../constants";
+import Button from "../../../components/Buttom/Button";
+import IconInput from "../../../components/IconInput/IconInput";
+
+const { height } = Dimensions.get("screen");
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -9,58 +15,51 @@ const Container = styled.SafeAreaView`
 
 const BackgroundImage = styled.ImageBackground`
   flex: 1;
-  justify-content: center;
-  align-items: center;
+  height: ${height}px;
 `;
 
-const ContentContainer = styled.View`
-  flex: 1;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  padding: 15px;
+const BackBtnContainer = styled.TouchableOpacity`
+  height: 33px;
+  width: 33px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 33px;
+  background-color: white;
+  margin-left: 20px;
+  margin-top: 50px;
+`;
+
+const TitleContainer = styled.View`
+  margin: 30px 0px;
+  margin-left: 20px;
 `;
 
 const Title = styled.Text`
   font-size: 24px;
-  font-weight: bold;
   margin-bottom: 10px;
+  color: white;
+  font-family: "semibold";
 `;
 
 const Subtitle = styled.Text`
-  font-size: 14px;
+  font-size: 13.5px;
   color: #888;
-  margin-bottom: 20px;
+  font-family: "normal";
 `;
 
-const Input = styled.TextInput`
-  width: 100%;
+const BottomTabsContainer = styled.View`
+  flex: 1;
+  background-color: white;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
   padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
-`;
-
-const Button = styled.TouchableOpacity`
-  width: 100%;
-  padding: 15px;
-  background-color: #000;
-  border-radius: 5px;
-  align-items: center;
-  margin-bottom: 10px;
-`;
-
-const ButtonText = styled.Text`
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
 `;
 
 const ToggleContainer = styled.View`
   flex-direction: row;
   justify-content: space-around;
   background-color: #f0f0f0;
-  border-radius: 20px;
+  border-radius: 40px;
   margin-bottom: 20px;
   padding: 7px;
 `;
@@ -73,130 +72,123 @@ const ToggleButton = styled.TouchableOpacity<{ active: boolean }>`
   align-items: center;
 `;
 
-const HelpText = styled.Text`
-  color: red;
-  text-align: center;
-  margin-top: 20px;
+const ToggleButtonTxt = styled.Text`
+  font-size: 13px;
+  color: black;
+  font-family: "medium";
 `;
 
-const SocialLoginContainer = styled.View`
+const RowContainer = styled.View`
   flex-direction: row;
+  margin-bottom: 20px;
+  align-items: center;
   justify-content: center;
-  margin-top: 20px;
 `;
 
-const SocialButton = styled.TouchableOpacity`
-  margin: 0 10px;
+const ForgotPassword = styled.Text`
+  font-size: 13px;
+  color: #424242;
+  font-family: "regular";
 `;
 
-const SocialIcon = styled.Image`
-  width: 50px;
-  height: 50px;
+const SignInOptions = styled.Text`
+  font-size: 13px;
+  color: #9e9e9e;
+  font-family: "regular";
+  text-align: center;
+  margin: 20px 0px 10px 00px;
 `;
 
-const LoginScreen = () => {
+const IconsContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Icon = styled.Image`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 70px;
+  margin: 20px 10px;
+`;
+
+export default function (props: any) {
   const [activeTab, setActiveTab] = useState("login");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [isPasswordVisible, setIsPasswordVisible] = useState(true);
 
   return (
     <Container>
-      <BackgroundImage
-        source={{
-          uri: "https://images.unsplash.com/photo-1607962837359-5e7e89f86776?q=80&w=5377&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        }}
-      >
-        <ContentContainer>
-          <ScrollView>
-            <Title>Go Ahead and setup Your Account</Title>
-            <Subtitle>
-              Lorem ipsum dolor sit amet, consectetur adipiscing.
-            </Subtitle>
-            <ToggleContainer>
-              <ToggleButton
-                active={activeTab === "login"}
-                onPress={() => setActiveTab("login")}
-              >
-                <Text>Login</Text>
-              </ToggleButton>
-              <ToggleButton
-                active={activeTab === "signup"}
-                onPress={() => setActiveTab("signup")}
-              >
-                <Text>Sign Up</Text>
-              </ToggleButton>
-            </ToggleContainer>
+      <BackgroundImage source={images.peopleExercising}>
+        <BackBtnContainer
+        //onPress={() => props.navigation.goBack()}
+        >
+          <Feather name="arrow-left" size={16} color={"black"} />
+        </BackBtnContainer>
+        <TitleContainer>
+          <Title>Go Ahead and setup Your Account</Title>
+          <Subtitle>
+            Lorem ipsum dolor sit amet, consectetur adipiscing.
+          </Subtitle>
+        </TitleContainer>
 
+        <BottomTabsContainer>
+          <ToggleContainer>
+            <ToggleButton
+              active={activeTab === "login"}
+              onPress={() => setActiveTab("login")}
+            >
+              <ToggleButtonTxt>Login</ToggleButtonTxt>
+            </ToggleButton>
+            <ToggleButton
+              active={activeTab === "signup"}
+              onPress={() => setActiveTab("signup")}
+            >
+              <ToggleButtonTxt>Sign Up</ToggleButtonTxt>
+            </ToggleButton>
+          </ToggleContainer>
+
+          <View style={{ flex: 1 }}>
             {activeTab === "login" ? (
               <>
-                <Input
-                  placeholder="Enter Email"
-                  keyboardType="email-address"
-                  value={email}
-                  onChangeText={setEmail}
+                <IconInput icon={"mail"} placeholder="Enter Email" />
+                <IconInput icon={"lock"} placeholder="Enter Your Password" />
+                <Button
+                  title="Login"
+                  marginVertical={20}
+                  onPress={() => props.navigation.navigate("OTP")}
                 />
-                <Input
-                  placeholder="Enter Password"
-                  secureTextEntry={isPasswordVisible}
-                  value={password}
-                  onChangeText={setPassword}
-                />
-                <TouchableOpacity
-                  onPress={() => setIsPasswordVisible(!isPasswordVisible)}
-                >
-                  <Text>
-                    {isPasswordVisible ? "Show Password" : "Hide Password"}
-                  </Text>
-                </TouchableOpacity>
-                <Button>
-                  <ButtonText>Login</ButtonText>
-                </Button>
+                <RowContainer>
+                  <ForgotPassword>Trouble In Signing In? </ForgotPassword>
+                  <TouchableOpacity>
+                    <ForgotPassword style={{ color: "red" }}>
+                      Need help
+                    </ForgotPassword>
+                  </TouchableOpacity>
+                </RowContainer>
               </>
             ) : (
               <>
-                <Input
-                  placeholder="Enter Your Name"
-                  value={name}
-                  onChangeText={setName}
-                />
-                <Input
-                  placeholder="Enter Email"
-                  keyboardType="email-address"
-                  value={email}
-                  onChangeText={setEmail}
-                />
-                <Input
-                  placeholder="Enter Password"
-                  secureTextEntry={isPasswordVisible}
-                  value={password}
-                  onChangeText={setPassword}
-                />
-                <Button>
-                  <ButtonText>Sign Up</ButtonText>
-                </Button>
+                <IconInput icon={"user"} placeholder="Enter Your Name" />
+                <IconInput icon={"mail"} placeholder="Enter Email" />
+                <IconInput icon={"lock"} placeholder="Enter Your Password" />
+                <Button title="Sign Up" marginVertical={20} />
               </>
             )}
+          </View>
 
-            <HelpText>
-              Trouble In Signing In?{" "}
-              <Text style={{ color: "blue" }}>Need help</Text>
-            </HelpText>
+          <SignInOptions>Or Sign In with</SignInOptions>
 
-            <SocialLoginContainer>
-              <SocialButton>
-                <SocialIcon source={{ uri: "google_icon_url_here" }} />
-              </SocialButton>
-              <SocialButton>
-                <SocialIcon source={{ uri: "apple_icon_url_here" }} />
-              </SocialButton>
-            </SocialLoginContainer>
-          </ScrollView>
-        </ContentContainer>
+          <IconsContainer>
+            <TouchableOpacity>
+              <Icon source={icons.google} resizeMode="contain" />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Icon source={icons.apple} resizeMode="contain" />
+            </TouchableOpacity>
+          </IconsContainer>
+        </BottomTabsContainer>
       </BackgroundImage>
     </Container>
   );
-};
-
-export default LoginScreen;
+}
