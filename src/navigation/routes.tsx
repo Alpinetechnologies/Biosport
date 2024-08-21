@@ -19,6 +19,7 @@ import Logs from "../screens/dashboard/Logs";
 import Consultation from "../screens/dashboard/Consultation";
 import Goals from "../screens/onboarding/Goals";
 import { useUserStore } from "../store";
+import Splash from "../screens/auth/Splash/Splash";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -54,6 +55,7 @@ const AuthStackNavigator = () => {
           component={ForgotPassword}
         />
         <AuthStack.Screen name={routeNames.OTP} component={OTP} />
+        <AuthStack.Screen name={routeNames.SPLASH} component={Splash} />
       </AuthStack.Navigator>
     </>
   );
@@ -109,17 +111,7 @@ const Routes = forwardRef(() => {
         initialRouteName="AUTH_ROUTES"
         screenOptions={{ headerShown: false }}
       >
-        {!isLoggedIn ? (
-          <Stack.Screen name="DASHBOARD" component={DashboardTabNavigator} />
-        ) : (
-          <>
-            <Stack.Screen
-              name="ONBOARDING"
-              component={OnboardingStackNavigator}
-            />
-            <Stack.Screen name="AUTH_ROUTES" component={AuthStackNavigator} />
-          </>
-        )}
+        <Stack.Screen name="Splash" component={Splash} />
       </Stack.Navigator>
     </NavigationContainer>
   );
