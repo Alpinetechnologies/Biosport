@@ -22,9 +22,8 @@ import { useUserStore } from "../store";
 import ProductDetails from "../screens/dashboard/Shop/ProductDetails";
 import BookingChat from "../screens/dashboard/Consultation/BookingChat/BookingChat";
 import BookConsultation from "../screens/dashboard/Consultation/BookConsultation/BookConsultation";
-import { TouchableOpacity } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import BookingSucess from "../screens/dashboard/Consultation/BookingSuccess/BookingSucess";
+import Devices from "../screens/onboarding/Devices";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -36,7 +35,10 @@ const ConsulationStack = createNativeStackNavigator();
 const AuthStackNavigator = () => {
   return (
     <>
-      <AuthStack.Navigator initialRouteName={routeNames.AUTH}>
+      <AuthStack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName={routeNames.PERSONALIZATION}
+      >
         {/* Pitch */}
         <AuthStack.Screen
           name={routeNames.PERSONALIZATION}
@@ -66,6 +68,12 @@ const AuthStackNavigator = () => {
           component={OTP}
           options={{ headerShown: false }}
         />
+
+        <Stack.Screen
+          name="ONBOARDING"
+          component={OnboardingStackNavigator}
+          options={{ headerShown: false }}
+        />
       </AuthStack.Navigator>
     </>
   );
@@ -76,12 +84,14 @@ const OnboardingStackNavigator = () => {
     <>
       <OnboardingStack.Navigator
         initialRouteName={routeNames.BASIC_INFORMATION}
+        screenOptions={{ headerShown: false }}
       >
         <OnboardingStack.Screen
           name={routeNames.BASIC_INFORMATION}
           component={BasicInformation}
         />
         <OnboardingStack.Screen name={routeNames.BMI} component={BMI} />
+        <OnboardingStack.Screen name={routeNames.DEVICES} component={Devices} />
         <OnboardingStack.Screen name={routeNames.ADDRESS} component={Address} />
         <OnboardingStack.Screen
           name={routeNames.PERMISSIONS}
@@ -170,7 +180,7 @@ const ConsulationStackNavigator = ({}) => {
 
 const Routes = forwardRef(() => {
   const { isLoggedIn } = useUserStore();
-  //  const isLoggedIn = true;
+  // const isLoggedIn = true;
 
   return (
     <NavigationContainer>

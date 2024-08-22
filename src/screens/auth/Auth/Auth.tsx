@@ -5,6 +5,7 @@ import styled from "styled-components/native";
 import { icons, images } from "../../../constants";
 import Button from "../../../components/Buttom/Button";
 import IconInput from "../../../components/IconInput/IconInput";
+import colors from "../../../styles/colors";
 
 const { height } = Dimensions.get("screen");
 
@@ -93,7 +94,7 @@ const ForgotPassword = styled.Text`
 
 const SignInOptions = styled.Text`
   font-size: 13px;
-  color: #9e9e9e;
+  color: ${colors.otherColors.lightGrey};
   font-family: "regular";
   text-align: center;
   margin: 20px 0px 10px 00px;
@@ -120,9 +121,7 @@ export default function (props: any) {
   return (
     <Container>
       <BackgroundImage source={images.peopleExercising}>
-        <BackBtnContainer
-        //onPress={() => props.navigation.goBack()}
-        >
+        <BackBtnContainer onPress={() => props.navigation.goBack()}>
           <Feather name="arrow-left" size={16} color={"black"} />
         </BackBtnContainer>
         <TitleContainer>
@@ -160,7 +159,9 @@ export default function (props: any) {
                 />
                 <RowContainer>
                   <ForgotPassword>Trouble In Signing In? </ForgotPassword>
-                  <TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => props.navigation.navigate("FORGOT_PASSWORD")}
+                  >
                     <ForgotPassword style={{ color: "red" }}>
                       Need help
                     </ForgotPassword>

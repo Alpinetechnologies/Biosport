@@ -5,6 +5,7 @@ import styled from "styled-components/native";
 import { images } from "../../../constants";
 import Button from "../../../components/Buttom/Button";
 import OtpInput from "../../../components/OtpInput/OtpInput";
+import colors from "../../../styles/colors";
 
 const { height } = Dimensions.get("screen");
 
@@ -38,7 +39,7 @@ const Title = styled.Text`
 
 const Subtitle = styled.Text`
   font-size: 13px;
-  color: #9e9e9e;
+  color: ${colors.otherColors.lightGrey};
   font-family: "normal";
   font-family: "regular";
   text-align: center;
@@ -93,7 +94,11 @@ export default function (props: any) {
             numOfDigits={4}
             onOtpChange={(otpValue) => setOtp(otpValue)}
           />
-          <Button title="Verify Code" marginVertical={40} />
+          <Button
+            title="Verify Code"
+            marginVertical={40}
+            onPress={() => props.navigation.navigate("ONBOARDING")}
+          />
           <ResendCode>Didn't receive the code?</ResendCode>
           <TouchableOpacity>
             <ResendCode style={{ color: "red" }}>Resend OTP</ResendCode>
