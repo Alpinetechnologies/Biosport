@@ -1,127 +1,8 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity, ScrollView } from "react-native";
+import { TouchableOpacity, ScrollView } from "react-native";
 import styled from "styled-components/native";
 import colors from "../../styles/colors";
 import { icons, images } from "../../constants";
-import { Dimensions } from "react-native";
-const { width } = Dimensions.get("window");
-
-export default function (props: any) {
-  const [selectedItems, setSelectedItems] = useState<string[]>([]);
-
-  const goladlist = [
-    {
-      id: "1",
-      label: "PHYSICAL FITNESS",
-      image:
-        "https://images.healthshots.com/healthshots/en/uploads/2022/12/12171842/10-minute-yoga.jpg",
-    },
-    {
-      id: "2",
-      label: "PERFORMANCE",
-      image:
-        "https://images.healthshots.com/healthshots/en/uploads/2022/12/12171842/10-minute-yoga.jpg",
-    },
-    {
-      id: "3",
-      label: "HEALTHY LIFESTYLE",
-      image:
-        "https://images.healthshots.com/healthshots/en/uploads/2022/12/12171842/10-minute-yoga.jpg",
-    },
-    {
-      id: "4",
-      label: "CHRONIC DISEASE MANAGEMENT",
-      image:
-        "https://images.healthshots.com/healthshots/en/uploads/2022/12/12171842/10-minute-yoga.jpg",
-    },
-    {
-      id: "5",
-      label: "ADHERENCE TO EXERCISE",
-      image:
-        "https://images.healthshots.com/healthshots/en/uploads/2022/12/12171842/10-minute-yoga.jpg",
-    },
-  ];
-
-  return (
-    <Container source={images.onboarding3}>
-      <ScrollView>
-        <HeaderContainer>
-          <SubHeading>
-            How about <Heading>you tell us</Heading> your goals you want to
-            achieve with BioSport.
-          </SubHeading>
-          <StepImage resizeMode="contain" source={icons.step5} />
-        </HeaderContainer>
-
-        <ContentRow>
-          <TabsContainer>
-            <InactiveTab>
-              <IconImage resizeMode="contain" source={icons.basic} />
-              <TabText>Basic</TabText>
-            </InactiveTab>
-
-            <InactiveTab>
-              <IconImage resizeMode="contain" source={icons.bmi} />
-              <TabText>BMI</TabText>
-            </InactiveTab>
-
-            <InactiveTab>
-              <IconImage resizeMode="contain" source={icons.permission} />
-              <TabText>Permission</TabText>
-            </InactiveTab>
-
-            <InactiveTab>
-              <IconImage resizeMode="contain" source={icons.devices} />
-              <TabText>Devices</TabText>
-            </InactiveTab>
-
-            <ActiveTab>
-              <IconImage resizeMode="contain" source={icons.goalsActive} />
-              <ActiveTabText>Goals</ActiveTabText>
-            </ActiveTab>
-          </TabsContainer>
-
-          <InfoContainer>
-            <InfoHeading>GOALS</InfoHeading>
-
-            {goladlist.map((data) => {
-              const isSelected = selectedItems.includes(data.id);
-
-              return (
-                <GoalOption
-                  key={data.id}
-                  isSelected={isSelected}
-                  onPress={() => {
-                    setSelectedItems((itemSelected) =>
-                      itemSelected.includes(data.id)
-                        ? itemSelected.filter((id) => id !== data.id)
-                        : [...itemSelected, data.id],
-                    );
-                  }}
-                >
-                  <GoalText isSelected={isSelected}>{data.label}</GoalText>
-                  <GoalImage source={{ uri: data.image }} />
-                </GoalOption>
-              );
-            })}
-
-            <BottomButtonContainer>
-              <TouchableOpacity>
-                <SkipButton>Skip</SkipButton>
-              </TouchableOpacity>
-
-              <NextButton
-                onPress={() => props.navigation.navigate("ONBOARDING_DEVICES")}
-              >
-                <NextButtonText>Next</NextButtonText>
-              </NextButton>
-            </BottomButtonContainer>
-          </InfoContainer>
-        </ContentRow>
-      </ScrollView>
-    </Container>
-  );
-}
 
 const Container = styled.ImageBackground`
   flex: 1;
@@ -266,58 +147,6 @@ const NextButtonText = styled.Text`
   font-family: "regular";
 `;
 
-const DevicesList = styled(View)`
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
-
-const DeviceRow = styled(TouchableOpacity)`
-  flex-direction: row;
-  align-items: center;
-
-  height: 63px;
-  background-color: #212121;
-  margin: 5px;
-  padding: 8px;
-  border-width: 0.5px;
-  border-color: #424242;
-  border-radius: 8px;
-  width: ${width / 3 - 21}px;
-`;
-
-const Icon = styled.Image`
-  height: 28px;
-  width: 28px;
-  margin-right: 5px;
-`;
-const Label = styled.Text`
-  font-size: 8px;
-  letter-spacing: 0.2px;
-  color: white;
-  line-height: 10px;
-  text-transform: uppercase;
-  font-family: "medium";
-  margin-bottom: 2px;
-`;
-
-const ConnectText = styled.Text`
-  font-size: 8px;
-  letter-spacing: 0.2px;
-  color: ${colors.parrotPrimary["primary-950"]};
-  font-weight: 500;
-  text-decoration-line: underline;
-`;
-
-const RowContainer = styled.View`
-  flex-direction: row;
-  align-items: center;
-`;
-
-const FlexWrap = styled(View)`
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
-
 const GoalOption = styled.TouchableOpacity<{ isSelected: boolean }>`
   flex-direction: row;
   align-items: center;
@@ -339,6 +168,112 @@ const GoalText = styled.Text<{ isSelected: boolean }>`
 const GoalImage = styled.Image`
   height: 50px;
   width: 50px;
-  resize-mode: cover;
   border-radius: 9px;
 `;
+
+export default function (props: any) {
+  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+
+  const goladlist = [
+    {
+      id: "1",
+      label: "PHYSICAL FITNESS",
+    },
+    {
+      id: "2",
+      label: "PERFORMANCE",
+    },
+    {
+      id: "3",
+      label: "HEALTHY LIFESTYLE",
+    },
+    {
+      id: "4",
+      label: "CHRONIC DISEASE MANAGEMENT",
+    },
+    {
+      id: "5",
+      label: "ADHERENCE TO EXERCISE",
+    },
+  ];
+
+  return (
+    <Container source={images.onboarding3}>
+      <ScrollView>
+        <HeaderContainer>
+          <SubHeading>
+            How about <Heading>you tell us</Heading> your goals you want to
+            achieve with BioSport.
+          </SubHeading>
+          <StepImage resizeMode="contain" source={icons.step5} />
+        </HeaderContainer>
+
+        <ContentRow>
+          <TabsContainer>
+            <InactiveTab>
+              <IconImage resizeMode="contain" source={icons.basic} />
+              <TabText>Basic</TabText>
+            </InactiveTab>
+
+            <InactiveTab>
+              <IconImage resizeMode="contain" source={icons.bmi} />
+              <TabText>BMI</TabText>
+            </InactiveTab>
+
+            <InactiveTab>
+              <IconImage resizeMode="contain" source={icons.permission} />
+              <TabText>Permission</TabText>
+            </InactiveTab>
+
+            <InactiveTab>
+              <IconImage resizeMode="contain" source={icons.devices} />
+              <TabText>Devices</TabText>
+            </InactiveTab>
+
+            <ActiveTab>
+              <IconImage resizeMode="contain" source={icons.goalsActive} />
+              <ActiveTabText>Goals</ActiveTabText>
+            </ActiveTab>
+          </TabsContainer>
+
+          <InfoContainer>
+            <InfoHeading>GOALS</InfoHeading>
+
+            {goladlist.map((data) => {
+              const isSelected = selectedItems.includes(data.id);
+
+              return (
+                <GoalOption
+                  key={data.id}
+                  isSelected={isSelected}
+                  onPress={() => {
+                    setSelectedItems((itemSelected) =>
+                      itemSelected.includes(data.id)
+                        ? itemSelected.filter((id) => id !== data.id)
+                        : [...itemSelected, data.id],
+                    );
+                  }}
+                >
+                  <GoalText isSelected={isSelected}>{data.label}</GoalText>
+                  <GoalImage source={images.onboarding2} />
+                </GoalOption>
+              );
+            })}
+
+            <BottomButtonContainer>
+              <TouchableOpacity>
+                <SkipButton>Skip</SkipButton>
+              </TouchableOpacity>
+
+              <NextButton
+                onPress={() => props.navigation.navigate("ONBOARDING_DEVICES")}
+              >
+                <NextButtonText>Next</NextButtonText>
+              </NextButton>
+            </BottomButtonContainer>
+          </InfoContainer>
+        </ContentRow>
+      </ScrollView>
+    </Container>
+  );
+}
