@@ -65,7 +65,8 @@ const OnboardingStackNavigator = () => {
   return (
     <>
       <OnboardingStack.Navigator
-        initialRouteName={routeNames.BASIC_INFORMATION}
+        initialRouteName={routeNames.PERMISSIONS}
+        screenOptions={{ headerShown: false }}
       >
         <OnboardingStack.Screen
           name={routeNames.BASIC_INFORMATION}
@@ -108,10 +109,10 @@ const Routes = forwardRef(() => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="AUTH_ROUTES"
+        initialRouteName="ONBOARDING"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen name="ONBOARDING" component={OnboardingStackNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
