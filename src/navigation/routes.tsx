@@ -20,6 +20,7 @@ import Consultation from "../screens/dashboard/Consultation";
 import Goals from "../screens/onboarding/Goals";
 import { useUserStore } from "../store";
 import Splash from "../screens/auth/Splash/Splash";
+import Devices from "../screens/onboarding/Devices";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -65,7 +66,7 @@ const OnboardingStackNavigator = () => {
   return (
     <>
       <OnboardingStack.Navigator
-        initialRouteName={routeNames.PERMISSIONS}
+        initialRouteName={routeNames.GOALS}
         screenOptions={{ headerShown: false }}
       >
         <OnboardingStack.Screen
@@ -73,11 +74,13 @@ const OnboardingStackNavigator = () => {
           component={BasicInformation}
         />
         <OnboardingStack.Screen name={routeNames.BMI} component={BMI} />
-        <OnboardingStack.Screen name={routeNames.ADDRESS} component={Address} />
+
         <OnboardingStack.Screen
           name={routeNames.PERMISSIONS}
           component={Permissions}
         />
+        <OnboardingStack.Screen name={routeNames.DEVICES} component={Devices} />
+        <OnboardingStack.Screen name={routeNames.ADDRESS} component={Address} />
         <OnboardingStack.Screen name={routeNames.GOALS} component={Goals} />
       </OnboardingStack.Navigator>
     </>
@@ -87,6 +90,7 @@ const OnboardingStackNavigator = () => {
 const DashboardTabNavigator = () => {
   return (
     <>
+      ~
       <DashboardTabs.Navigator initialRouteName={routeNames.HOME}>
         <DashboardTabs.Screen
           name={routeNames.HOME}
