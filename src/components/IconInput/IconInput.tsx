@@ -1,13 +1,14 @@
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { IconContainer, InputBox, InputContainer } from "./IconInput.styled";
+import colors from "../../styles/colors";
 
 export default function IconInput(props: any) {
   return (
     <InputContainer>
       <InputBox
         placeholder={props.placeholder}
-        placeholderTextColor={`#9E9E9E`}
+        placeholderTextColor={colors.otherColors.lightGrey}
         secureTextEntry={props.secureTextEntry}
         autoCapitalize="none"
         defaultValue={props.defaultValue}
@@ -18,7 +19,11 @@ export default function IconInput(props: any) {
       />
 
       <IconContainer>
-        <Feather name={props.icon} size={18} color={"#9E9E9E"} />
+        <Feather
+          name={props.icon}
+          size={18}
+          color={colors.otherColors.lightGrey}
+        />
       </IconContainer>
     </InputContainer>
   );

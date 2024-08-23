@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { ButtonContainer, ButtonTxt } from "./Button.styled";
 
-export default function Button(props: any) {
+export default function YellowButton(props: any) {
   return (
     <View
       style={{

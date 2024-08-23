@@ -188,10 +188,21 @@ const Routes = forwardRef(() => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="CHOOSE_PLAN"
+        initialRouteName="AUTH_ROUTES"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="CHOOSE_PLAN" component={Plan} />
+        {!isLoggedIn ? (
+          <Stack.Screen name="AUTH_ROUTES" component={AuthStackNavigator} />
+        ) : (
+          <>
+            {/* <Stack.Screen
+              name="ONBOARDING"
+              component={OnboardingStackNavigator}
+              options={{ headerShown: false }}
+            /> */}
+            <Stack.Screen name="DASHBOARD" component={DashboardTabNavigator} />
+          </>
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );

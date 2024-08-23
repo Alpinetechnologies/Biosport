@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { TextInput } from "react-native";
+import colors from "../../styles/colors";
 
 export const InputContainer = styled.TouchableOpacity`
   justify-content: center;
@@ -9,7 +10,7 @@ export const InputContainer = styled.TouchableOpacity`
 `;
 
 export const OtpBox = styled(TextInput).attrs({
-  selectionColor: "#CEFF00",
+  selectionColor: colors.parrotPrimary["primary-950"],
 })`
   height: 60px;
   width: 60px;

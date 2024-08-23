@@ -99,6 +99,17 @@ const parrotPrimary = {
   "primary-950": "#CEFF00",
 };
 
+const otherColors = {
+  black: "#000000",
+  white: "#ffffff",
+  lightGrey: "#9E9E9E",
+  extraLightGrey: "#F9F9F9",
+  grey: "#757575",
+  transparentBlack: "rgba(0, 0, 0, 0.6)",
+  transparentWhite: "rgba(256, 256, 256, 0.15)",
+  darkGrey: "#212121",
+};
+
 const isHex = (color = "") => color.length >= 3 && color.charAt(0) === "#";
 const isRGB = (color = "") => toLower(color).substring(0, 3) === "rgb";
 
@@ -124,4 +135,5 @@ export default {
   lightSecondary,
   darkSecondary,
   dangerColor,
+  otherColors,
 };
