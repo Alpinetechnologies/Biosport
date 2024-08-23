@@ -108,6 +108,7 @@ const otherColors = {
   transparentBlack: "rgba(0, 0, 0, 0.6)",
   transparentWhite: "rgba(256, 256, 256, 0.15)",
   darkGrey: "#212121",
+  border: "#616161",
 };
 
 const isHex = (color = "") => color.length >= 3 && color.charAt(0) === "#";

@@ -24,6 +24,7 @@ import BookingChat from "../screens/dashboard/Consultation/BookingChat/BookingCh
 import BookConsultation from "../screens/dashboard/Consultation/BookConsultation/BookConsultation";
 import BookingSucess from "../screens/dashboard/Consultation/BookingSuccess/BookingSucess";
 import Plan from "../screens/onboarding/Plans/Plan/Plan";
+import AddOn from "../screens/onboarding/Plans/AddOn/AddOn";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -100,6 +101,11 @@ const OnboardingStackNavigator = () => {
         <OnboardingStack.Screen
           name={routeNames.CHOOSE_PLAN}
           component={Plan}
+        />
+
+        <OnboardingStack.Screen
+          name={routeNames.BILLING_AND_ADDONS}
+          component={AddOn}
         />
       </OnboardingStack.Navigator>
     </>
@@ -188,10 +194,10 @@ const Routes = forwardRef(() => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="CHOOSE_PLAN"
+        initialRouteName="BILLING_AND_ADDONS"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="CHOOSE_PLAN" component={Plan} />
+        <Stack.Screen name="BILLING_AND_ADDONS" component={AddOn} />
       </Stack.Navigator>
     </NavigationContainer>
   );
