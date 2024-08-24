@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import styled from "styled-components/native";
 import { icons, images } from "../../../constants";
-import Button from "../../../components/Buttom/Button";
+
 import IconInput from "../../../components/IconInput/IconInput";
 import colors from "../../../styles/colors";
+import { BlackButton } from "../../../components/Buttom/Button";
 
 const { height } = Dimensions.get("screen");
 
@@ -152,7 +153,7 @@ export default function (props: any) {
               <>
                 <IconInput icon={"mail"} placeholder="Enter Email" />
                 <IconInput icon={"lock"} placeholder="Enter Your Password" />
-                <Button
+                <BlackButton
                   title="Login"
                   marginVertical={20}
                   onPress={() => props.navigation.navigate("OTP")}
@@ -173,7 +174,7 @@ export default function (props: any) {
                 <IconInput icon={"user"} placeholder="Enter Your Name" />
                 <IconInput icon={"mail"} placeholder="Enter Email" />
                 <IconInput icon={"lock"} placeholder="Enter Your Password" />
-                <Button title="Sign Up" marginVertical={20} />
+                <BlackButton title="Sign Up" marginVertical={20} />
               </>
             )}
           </View>

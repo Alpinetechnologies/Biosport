@@ -24,6 +24,7 @@ import BookingChat from "../screens/dashboard/Consultation/BookingChat/BookingCh
 import BookConsultation from "../screens/dashboard/Consultation/BookConsultation/BookConsultation";
 import BookingSucess from "../screens/dashboard/Consultation/BookingSuccess/BookingSucess";
 import Devices from "../screens/onboarding/Devices";
+import Plans from "../screens/onboarding/Plans";
 
 const Stack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -98,6 +99,8 @@ const OnboardingStackNavigator = () => {
           component={Permissions}
         />
         <OnboardingStack.Screen name={routeNames.GOALS} component={Goals} />
+
+        <OnboardingStack.Screen name={routeNames.PLANS} component={Plans} />
       </OnboardingStack.Navigator>
     </>
   );

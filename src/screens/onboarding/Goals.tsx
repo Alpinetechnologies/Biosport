@@ -266,7 +266,7 @@ export default function (props: any) {
               </TouchableOpacity>
 
               <NextButton
-                onPress={() => props.navigation.navigate("ONBOARDING_DEVICES")}
+                onPress={() => props.navigation.navigate("ONBOARDING_PLANS")}
               >
                 <NextButtonText>Next</NextButtonText>
               </NextButton>

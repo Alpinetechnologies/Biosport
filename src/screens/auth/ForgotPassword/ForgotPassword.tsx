@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import styled from "styled-components/native";
 import { images } from "../../../constants";
-import Button from "../../../components/Buttom/Button";
+
 import OtpInput from "../../../components/OtpInput/OtpInput";
 import colors from "../../../styles/colors";
+import { BlackButton } from "../../../components/Buttom/Button";
 
 const { height } = Dimensions.get("screen");
 
@@ -94,7 +95,7 @@ export default function (props: any) {
             numOfDigits={4}
             onOtpChange={(otpValue) => setOtp(otpValue)}
           />
-          <Button
+          <BlackButton
             title="Verify Code"
             marginVertical={40}
             onPress={() => props.navigation.navigate("ONBOARDING")}
