@@ -1,5 +1,5 @@
-import { create } from "zustand";
-import { User } from "../types/User";
+import { create } from 'zustand';
+import { User } from '../types/User';
 
 interface UserState {
   user: User | null;
@@ -8,7 +8,7 @@ interface UserState {
   setLogin: (isLoggedIn: boolean) => void;
 }
 
-export const useUserStore = create<UserState>((set) => ({
+export const useUserStore = create<UserState>(set => ({
   user: null,
   isLoggedIn: false,
   setUser: (user: User) => set({ user }),

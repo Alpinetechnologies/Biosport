@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import {
   OptionContainer,
   OptionCircle,
   OptionText,
-} from "./OptionSelector.styled";
+} from './OptionSelector.styled';
 
 export const OptionSelector = ({
   options,

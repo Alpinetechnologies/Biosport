@@ -1,5 +1,5 @@
-import React from "react";
-import { View } from "react-native";
+import React from 'react';
+import { View } from 'react-native';
 import {
   ProfileContainer,
   ProfileImage,
@@ -9,8 +9,8 @@ import {
   TimeContainer,
   Time,
   VerticalLine,
-} from "./ProfileCard.styled";
-import { EvilIcons } from "@expo/vector-icons";
+} from './ProfileCard.styled';
+import { EvilIcons } from '@expo/vector-icons';
 
 const ProfileCard = ({ data }) => {
   return (

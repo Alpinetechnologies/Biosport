@@ -1,7 +1,7 @@
-import styled from "styled-components/native";
-import colors from "../../styles/colors";
-import { Dimensions } from "react-native";
-const { width } = Dimensions.get("window");
+import styled from 'styled-components/native';
+import colors from '../../styles/colors';
+import { Dimensions } from 'react-native';
+const { width } = Dimensions.get('window');
 
 export const Container = styled.View`
   justify-content: center;
@@ -43,14 +43,14 @@ export const ModalInnerContainer = styled.View`
 `;
 export const HeaderBg = styled.View`
   padding: 5px;
-  background-color: ${colors.parrotPrimary["primary-950"]};
+  background-color: ${colors.parrotPrimary['primary-950']};
 `;
 
 export const ModalHeading = styled.Text`
   font-size: 14px;
   color: black;
   padding: 10px;
-  font-family: "semibold";
+  font-family: 'semibold';
 `;
 
 export const SearchInput = styled.TextInput`
@@ -72,12 +72,12 @@ export const ItemContainer = styled.TouchableOpacity<{ selected: boolean }>`
   padding: 15px;
   border-bottom-width: 0.5px;
   border-color: black;
-  background-color: ${(props) =>
-    props.selected ? "black" : colors.otherColors.darkGrey};
+  background-color: ${props =>
+    props.selected ? 'black' : colors.otherColors.darkGrey};
 `;
 
 export const ItemText = styled.Text`
   font-size: 12px;
   color: white;
-  font-family: "medium";
+  font-family: 'medium';
 `;

@@ -1,5 +1,5 @@
-import React from "react";
-import { TabContainer, TabButton, TabText } from "./Tabs.styled";
+import React from 'react';
+import { TabContainer, TabButton, TabText } from './Tabs.styled';
 
 const Tabs = ({
   tabs,

@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
   flex: 1;
@@ -59,10 +59,9 @@ export const Button = styled.TouchableOpacity`
   width: 50%;
   height: 50px;
   border-radius: 20px;
-  background: ${(props) =>
-    props.status === "Upcoming" ? "#090909" : "#CEFF00"};
+  background: ${props => (props.status === 'Upcoming' ? '#090909' : '#CEFF00')};
 `;
 
 export const ButtonText = styled.Text`
-  color: ${(props) => (props.status === "Upcoming" ? "#fff" : "#090909")};
+  color: ${props => (props.status === 'Upcoming' ? '#fff' : '#090909')};
 `;

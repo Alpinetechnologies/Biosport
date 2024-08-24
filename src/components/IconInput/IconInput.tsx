@@ -1,7 +1,7 @@
-import React from "react";
-import { Feather } from "@expo/vector-icons";
-import { IconContainer, InputBox, InputContainer } from "./IconInput.styled";
-import colors from "../../styles/colors";
+import React from 'react';
+import { Feather } from '@expo/vector-icons';
+import { IconContainer, InputBox, InputContainer } from './IconInput.styled';
+import colors from '../../styles/colors';
 
 export default function IconInput(props: any) {
   return (

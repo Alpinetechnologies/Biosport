@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import {
   Container,
   ImageContainer,
@@ -8,23 +8,23 @@ import {
   SummaryContainer,
   ViewAppointment,
   Text,
-} from "./BookingSuccess.styled";
-import { AntDesign } from "@expo/vector-icons";
-import ProfileCard from "../../../../components/ProfileCard/ProfileCard";
-import { dummyData } from "./temp";
+} from './BookingSuccess.styled';
+import { AntDesign } from '@expo/vector-icons';
+import ProfileCard from '../../../../components/ProfileCard/ProfileCard';
+import { dummyData } from './temp';
 
 const BookingSucess = ({ navigation }) => {
   //   To hide the bottom bar
   useEffect(() => {
     navigation.getParent()?.setOptions({
       tabBarStyle: {
-        display: "none",
+        display: 'none',
       },
     });
     return () => {
       navigation.getParent()?.setOptions({
         tabBarStyle: {
-          display: "flex",
+          display: 'flex',
         },
       });
     };

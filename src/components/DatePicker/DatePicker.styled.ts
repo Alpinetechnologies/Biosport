@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import { TouchableOpacityProps, TextProps } from "react-native";
+import styled from 'styled-components/native';
+import { TouchableOpacityProps, TextProps } from 'react-native';
 
 interface DateOptions extends TouchableOpacityProps {
   selected: boolean;
@@ -37,16 +37,16 @@ export const MonthSelector = styled.View`
 
 export const DateButton = styled.TouchableOpacity<DateOptions>`
   padding: 10px;
-  background-color: ${({ selected }) => (selected ? "#424242" : "#ecf0f1")};
+  background-color: ${({ selected }) => (selected ? '#424242' : '#ecf0f1')};
   border-radius: 4px;
   margin-right: 8px;
 `;
 
 export const DateText = styled.Text<SelectedDate>`
-  color: ${({ selected }) => (selected ? "#fff" : "#000")};
+  color: ${({ selected }) => (selected ? '#fff' : '#000')};
   text-align: center;
 `;
 
 export const WeekText = styled.Text<SelectedDate>`
-  color: ${({ selected }) => (selected ? "#FFFFFF" : "#616161")};
+  color: ${({ selected }) => (selected ? '#FFFFFF' : '#616161')};
 `;

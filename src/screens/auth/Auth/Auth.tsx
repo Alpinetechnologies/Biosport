@@ -1,129 +1,37 @@
-import { View, Dimensions, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
-import { Feather } from "@expo/vector-icons";
-import styled from "styled-components/native";
-import { icons, images } from "../../../constants";
+import { routeNames } from '@/src/navigation/routeNames';
+import { Feather } from '@expo/vector-icons';
+import React, { useState } from 'react';
+import { TouchableOpacity, View } from 'react-native';
+import { BlackButton } from '../../../components/Buttom/Button';
+import IconInput from '../../../components/IconInput/IconInput';
+import { icons, images } from '../../../constants';
 
-import IconInput from "../../../components/IconInput/IconInput";
-import colors from "../../../styles/colors";
-import { BlackButton } from "../../../components/Buttom/Button";
-
-const { height } = Dimensions.get("screen");
-
-const Container = styled.SafeAreaView`
-  flex: 1;
-  background-color: #fff;
-`;
-
-const BackgroundImage = styled.ImageBackground`
-  flex: 1;
-  height: ${height}px;
-`;
-
-const BackBtnContainer = styled.TouchableOpacity`
-  height: 33px;
-  width: 33px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 33px;
-  background-color: white;
-  margin-left: 20px;
-  margin-top: 50px;
-`;
-
-const TitleContainer = styled.View`
-  margin: 30px 0px;
-  margin-left: 20px;
-`;
-
-const Title = styled.Text`
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: white;
-  font-family: "semibold";
-`;
-
-const Subtitle = styled.Text`
-  font-size: 13.5px;
-  color: #888;
-  font-family: "normal";
-`;
-
-const BottomTabsContainer = styled.View`
-  flex: 1;
-  background-color: white;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
-  padding: 15px;
-`;
-
-const ToggleContainer = styled.View`
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #f0f0f0;
-  border-radius: 40px;
-  margin-bottom: 20px;
-  padding: 7px;
-`;
-
-const ToggleButton = styled.TouchableOpacity<{ active: boolean }>`
-  flex: 1;
-  padding: 10px;
-  border-radius: 20px;
-  background-color: ${(props) => (props.active ? "#fff" : "transparent")};
-  align-items: center;
-`;
-
-const ToggleButtonTxt = styled.Text`
-  font-size: 13px;
-  color: black;
-  font-family: "medium";
-`;
-
-const RowContainer = styled.View`
-  flex-direction: row;
-  margin-bottom: 20px;
-  align-items: center;
-  justify-content: center;
-`;
-
-const ForgotPassword = styled.Text`
-  font-size: 13px;
-  color: #424242;
-  font-family: "regular";
-`;
-
-const SignInOptions = styled.Text`
-  font-size: 13px;
-  color: ${colors.otherColors.lightGrey};
-  font-family: "regular";
-  text-align: center;
-  margin: 20px 0px 10px 00px;
-`;
-
-const IconsContainer = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Icon = styled.Image`
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-  width: 70px;
-  margin: 20px 10px;
-`;
+import {
+  BackBtnContainer,
+  BackgroundImage,
+  BottomTabsContainer,
+  Container,
+  ForgotPassword,
+  Icon,
+  IconsContainer,
+  RowContainer,
+  SignInOptions,
+  Subtitle,
+  Title,
+  TitleContainer,
+  ToggleButton,
+  ToggleButtonTxt,
+  ToggleContainer,
+} from './Auth.styled';
 
 export default function (props: any) {
-  const [activeTab, setActiveTab] = useState("login");
+  const [activeTab, setActiveTab] = useState('login');
 
   return (
     <Container>
       <BackgroundImage source={images.peopleExercising}>
         <BackBtnContainer onPress={() => props.navigation.goBack()}>
-          <Feather name="arrow-left" size={16} color={"black"} />
+          <Feather name="arrow-left" size={16} color={'black'} />
         </BackBtnContainer>
         <TitleContainer>
           <Title>Go Ahead and setup Your Account</Title>
@@ -135,35 +43,37 @@ export default function (props: any) {
         <BottomTabsContainer>
           <ToggleContainer>
             <ToggleButton
-              active={activeTab === "login"}
-              onPress={() => setActiveTab("login")}
+              active={activeTab === 'login'}
+              onPress={() => setActiveTab('login')}
             >
               <ToggleButtonTxt>Login</ToggleButtonTxt>
             </ToggleButton>
             <ToggleButton
-              active={activeTab === "signup"}
-              onPress={() => setActiveTab("signup")}
+              active={activeTab === 'signup'}
+              onPress={() => setActiveTab('signup')}
             >
               <ToggleButtonTxt>Sign Up</ToggleButtonTxt>
             </ToggleButton>
           </ToggleContainer>
 
           <View style={{ flex: 1 }}>
-            {activeTab === "login" ? (
+            {activeTab === 'login' ? (
               <>
-                <IconInput icon={"mail"} placeholder="Enter Email" />
-                <IconInput icon={"lock"} placeholder="Enter Your Password" />
+                <IconInput icon={'mail'} placeholder="Enter Email" />
+                <IconInput icon={'lock'} placeholder="Enter Your Password" />
                 <BlackButton
                   title="Login"
                   marginVertical={20}
-                  onPress={() => props.navigation.navigate("OTP")}
+                  onPress={() => props.navigation.navigate(routeNames.OTP)}
                 />
                 <RowContainer>
                   <ForgotPassword>Trouble In Signing In? </ForgotPassword>
                   <TouchableOpacity
-                    onPress={() => props.navigation.navigate("FORGOT_PASSWORD")}
+                    onPress={() =>
+                      props.navigation.navigate(routeNames.FORGOT_PASSWORD)
+                    }
                   >
-                    <ForgotPassword style={{ color: "red" }}>
+                    <ForgotPassword style={{ color: 'red' }}>
                       Need help
                     </ForgotPassword>
                   </TouchableOpacity>
@@ -171,9 +81,9 @@ export default function (props: any) {
               </>
             ) : (
               <>
-                <IconInput icon={"user"} placeholder="Enter Your Name" />
-                <IconInput icon={"mail"} placeholder="Enter Email" />
-                <IconInput icon={"lock"} placeholder="Enter Your Password" />
+                <IconInput icon={'user'} placeholder="Enter Your Name" />
+                <IconInput icon={'mail'} placeholder="Enter Email" />
+                <IconInput icon={'lock'} placeholder="Enter Your Password" />
                 <BlackButton title="Sign Up" marginVertical={20} />
               </>
             )}

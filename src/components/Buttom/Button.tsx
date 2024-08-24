@@ -1,11 +1,11 @@
-import React from "react";
-import { View } from "react-native";
+import React from 'react';
+import { View } from 'react-native';
 import {
   ButtonContainer,
   ButtonTxt,
   PrimaryButtonContainer,
   PrimaryButtonTxt,
-} from "./Button.styled";
+} from './Button.styled';
 
 function BlackButton(props: any) {
   return (

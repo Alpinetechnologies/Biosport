@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   ProductContainer,
   Image,
@@ -7,8 +7,8 @@ import {
   PriceContainer,
   MinPrice,
   MaxPrice,
-} from "./ProductCatalog.styled";
-import { Product } from "../../types/Shop";
+} from './ProductCatalog.styled';
+import { Product } from '../../types/Shop';
 
 const ProductCatalog = ({
   data: { title, imageURL, description, minPrice, maxPrice },

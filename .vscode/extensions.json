@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "alefragnani.bookmarks",
+    "eamodio.gitlens",
+    "ms-vsliveshare.vsliveshare",
+    "ms-playwright.playwright"
+  ]
+}

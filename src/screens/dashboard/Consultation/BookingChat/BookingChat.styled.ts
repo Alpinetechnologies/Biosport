@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const ChatContainer = styled.View`
   flex: 1;
@@ -30,7 +30,7 @@ export const OnlineIndicator = styled.View<{ isOnline: boolean }>`
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: ${(props) => (props.isOnline ? "#57B77D" : "#FF3B30")};
+  background-color: ${props => (props.isOnline ? '#57B77D' : '#FF3B30')};
   position: absolute;
   bottom: 0;
   right: 0;
@@ -75,7 +75,7 @@ export const MessageBubble = styled.View<{ isMine: boolean }>`
   max-width: 75%;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: ${(props) => (props.isMine ? "#d1e7dd" : "#ffffff")};
+  background-color: ${props => (props.isMine ? '#d1e7dd' : '#ffffff')};
   border-radius: 20px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 `;

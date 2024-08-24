@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from 'react';
 import {
   CarouselContainer,
   FlatList,
@@ -6,7 +6,7 @@ import {
   CarouselImage,
   IndicatorContainer,
   Indicator,
-} from "./Carousel.styled";
+} from './Carousel.styled';
 
 const Carousel = ({ items }: { items: any }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

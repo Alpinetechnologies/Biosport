@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   DatePickerContainer,
   Header,
@@ -7,30 +7,30 @@ import {
   DateButton,
   DateText,
   WeekText,
-} from "./DatePicker.styled";
-import { FlatList } from "react-native";
+} from './DatePicker.styled';
+import { FlatList } from 'react-native';
 
-import { Picker } from "@react-native-picker/picker";
+import { Picker } from '@react-native-picker/picker';
 
 const dates = Array.from({ length: 31 }, (_, i) => i + 1);
 const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ];
 
 const DatePicker = () => {
   const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedMonth, setSelectedMonth] = useState("August");
+  const [selectedMonth, setSelectedMonth] = useState('August');
 
   return (
     <DatePickerContainer>
@@ -39,10 +39,10 @@ const DatePicker = () => {
         <MonthSelector>
           <Picker
             selectedValue={selectedMonth}
-            onValueChange={(itemValue) => setSelectedMonth(itemValue)}
+            onValueChange={itemValue => setSelectedMonth(itemValue)}
             mode="dropdown"
           >
-            {months.map((month) => (
+            {months.map(month => (
               <Picker.Item key={month} label={month} value={month} />
             ))}
           </Picker>
@@ -50,7 +50,7 @@ const DatePicker = () => {
       </Header>
       <FlatList
         data={dates}
-        keyExtractor={(item) => item.toString()}
+        keyExtractor={item => item.toString()}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (

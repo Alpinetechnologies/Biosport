@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import { TouchableOpacityProps, TextProps } from "react-native";
+import styled from 'styled-components/native';
+import { TouchableOpacityProps, TextProps } from 'react-native';
 
 interface TimeOptions extends TouchableOpacityProps {
   selected: boolean;
@@ -83,7 +83,7 @@ export const OptionContainer = styled.View`
 export const Option = styled.TouchableOpacity<TimeOptions>`
   width: 24%;
   padding: 10px;
-  background-color: ${(props) => (props.selected ? "#424242" : "#ecf0f1")};
+  background-color: ${props => (props.selected ? '#424242' : '#ecf0f1')};
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
@@ -91,7 +91,7 @@ export const Option = styled.TouchableOpacity<TimeOptions>`
 `;
 
 export const OptionText = styled.Text<SelectedTime>`
-  color: ${(props) => (props.selected ? "#FFFFFF" : "#616161")};
+  color: ${props => (props.selected ? '#FFFFFF' : '#616161')};
   font-weight: 400;
   font-size: 14px;
 `;

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Modal, FlatList } from "react-native";
-import Feather from "@expo/vector-icons/Feather";
+import React, { useEffect, useState } from 'react';
+import { Modal, FlatList } from 'react-native';
+import Feather from '@expo/vector-icons/Feather';
 
 import {
   Container,
@@ -14,8 +14,8 @@ import {
   PressableInput,
   SearchInput,
   SelectedValue,
-} from "./Dropdown.styled";
-import colors from "../../styles/colors";
+} from './Dropdown.styled';
+import colors from '../../styles/colors';
 
 interface DropdownItem {
   label: string;
@@ -39,19 +39,19 @@ export default function Dropdown<T extends DropdownItem>({
   search = false,
 }: DropdownProps<T>) {
   const [modalVisible, setModalVisible] = useState(false);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   const [results, setResults] = useState<T[]>(items);
 
   const handleSearch = (text: string) => {
     setQuery(text);
-    const filteredData = items.filter((item) =>
+    const filteredData = items.filter(item =>
       item.label.toLowerCase().startsWith(text.toLowerCase()),
     );
     setResults(filteredData);
   };
 
   const selectedValue = defaultValue
-    ? items.find((item) => item.value === defaultValue.value)
+    ? items.find(item => item.value === defaultValue.value)
     : undefined;
 
   useEffect(() => {
@@ -91,7 +91,7 @@ export default function Dropdown<T extends DropdownItem>({
               <HeaderBg>
                 <SearchInput
                   placeholder="Search.."
-                  placeholderTextColor={"black"}
+                  placeholderTextColor={'black'}
                   value={query}
                   onChangeText={handleSearch}
                 />
@@ -112,7 +112,7 @@ export default function Dropdown<T extends DropdownItem>({
                   onPress={() => {
                     onChangeItem(item);
                     setModalVisible(false);
-                    setQuery("");
+                    setQuery('');
                   }}
                 >
                   <ItemText>{item.label}</ItemText>

@@ -12,18 +12,18 @@ import {
   ButtonContainer,
   Button,
   ButtonText,
-} from "./ConsultationHistory.styled";
+} from './ConsultationHistory.styled';
 
-import React from "react";
-import { dummyData } from "./temp";
-import ProfileCard from "../../../../components/ProfileCard/ProfileCard";
+import React from 'react';
+import { dummyData } from './temp';
+import ProfileCard from '../../../../components/ProfileCard/ProfileCard';
 
 const ConsultionHistory = () => {
   return (
     <Container>
       {/* for upcoming  */}
       <Upcoming>Upcoming</Upcoming>
-      {dummyData.map((val) => (
+      {dummyData.map(val => (
         <OrderContainer>
           <ProfileCard data={val} />
           <ExtraDetails>
@@ -43,7 +43,7 @@ const ConsultionHistory = () => {
 
       {/* For completed */}
       <Previous>Previous Meeting</Previous>
-      {dummyData.map((val) => (
+      {dummyData.map(val => (
         <OrderContainer>
           <ProfileCard data={val} />
           <ExtraDetails>

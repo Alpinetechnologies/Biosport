@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import colors from "../../styles/colors";
+import styled from 'styled-components/native';
+import colors from '../../styles/colors';
 
 export const InputContainer = styled.TouchableOpacity`
   justify-content: center;
@@ -7,7 +7,7 @@ export const InputContainer = styled.TouchableOpacity`
 `;
 
 export const InputBox = styled.TextInput`
-  font-family: "regular";
+  font-family: 'regular';
   font-size: 12px;
   padding-left: 50px;
   border-color: ${colors.otherColors.lightGrey};

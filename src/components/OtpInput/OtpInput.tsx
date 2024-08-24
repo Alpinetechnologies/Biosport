@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
-import { TextInput, Keyboard } from "react-native";
-import { InputContainer, OtpBox } from "./OtpInput.styled";
+import React, { useState, useRef } from 'react';
+import { TextInput, Keyboard } from 'react-native';
+import { InputContainer, OtpBox } from './OtpInput.styled';
 
 interface OtpInputProps {
   numOfDigits: number;
@@ -8,7 +8,7 @@ interface OtpInputProps {
 }
 
 const OtpInput: React.FC<OtpInputProps> = ({ numOfDigits, onOtpChange }) => {
-  const [otp, setOtp] = useState<string[]>(Array(numOfDigits).fill(""));
+  const [otp, setOtp] = useState<string[]>(Array(numOfDigits).fill(''));
   const [focusedInput, setFocusedInput] = useState<number | null>(null);
   const inputs = useRef<TextInput[]>([]);
 
@@ -17,7 +17,7 @@ const OtpInput: React.FC<OtpInputProps> = ({ numOfDigits, onOtpChange }) => {
     newOtp[index] = text;
 
     setOtp(newOtp);
-    onOtpChange(newOtp.join(""));
+    onOtpChange(newOtp.join(''));
 
     if (text && index < numOfDigits - 1) {
       inputs.current[index + 1].focus();
@@ -36,9 +36,9 @@ const OtpInput: React.FC<OtpInputProps> = ({ numOfDigits, onOtpChange }) => {
         <OtpBox
           key={index}
           ref={(el: any) => (inputs.current[index] = el!)}
-          style={{ borderColor: focusedInput === index ? "black" : "#BDBDBD" }}
+          style={{ borderColor: focusedInput === index ? 'black' : '#BDBDBD' }}
           value={digit}
-          onChangeText={(text) => handleChange(text, index)}
+          onChangeText={text => handleChange(text, index)}
           keyboardType="numeric"
           maxLength={1}
           onFocus={() => setFocusedInput(index)}
