@@ -53,4 +53,5 @@ export const images = {
   onboarding3: require('../../assets/images/ob3.png'),
   logo: require('../../assets/images/logo.png'),
   logoWhite: require('../../assets/images/logo-white.png'),
+  graph: require('../../assets/images/graph.png'),
 };

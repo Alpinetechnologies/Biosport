@@ -46,6 +46,7 @@ const dashboardRouteNames = {
   WORKOUT_PLAN: 'WORKOUT_PLAN',
   TODAYS_WORKOUT: 'TODAYS_WORKOUT',
   TODAYS_WORKOUT_TIMER: 'TODAYS_WORKOUT_TIMER',
+  HEART_RATE: 'YOUR_HEART_RATE',
 };
 
 export default dashboardRouteNames;

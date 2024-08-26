@@ -102,12 +102,15 @@ const parrotPrimary = {
 const otherColors = {
   black: '#000000',
   white: '#ffffff',
+  LightWhite: '#EEEEEE',
   lightGrey: '#9E9E9E',
   extraLightGrey: '#F9F9F9',
   grey: '#757575',
   transparentBlack: 'rgba(0, 0, 0, 0.6)',
   transparentWhite: 'rgba(256, 256, 256, 0.15)',
   darkGrey: '#212121',
+  LightPink: '#FFF9E6',
+  yellow: '#FFC107',
 };
 
 const isHex = (color = '') => color.length >= 3 && color.charAt(0) === '#';
