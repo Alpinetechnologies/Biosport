@@ -1,4 +1,4 @@
-import Supplements from '@/src/screens/dashboard/logs/Supplement/Supplement';
+import SupplementIntake from '@/src/screens/dashboard/logs/SupplementIntake/SupplementIntake';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { routeNames } from '../routeNames';
 
@@ -31,9 +31,13 @@ export const DashboardTabNavigator = () => {
           component={WaterLog}
         />  */}
 
-        <DashboardTabs.Screen
+        {/*  <DashboardTabs.Screen
           name={routeNames.ADD_SUPPLEMENTS_LOG}
           component={Supplements}
+        /> */}
+        <DashboardTabs.Screen
+          name={routeNames.ADD_ALCOHOL_INTAKE_LOG}
+          component={SupplementIntake}
         />
         {/*   <DashboardTabs.Screen
           name={routeNames.CONSULTATION}

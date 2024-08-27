@@ -55,4 +55,5 @@ export const images = {
   logoWhite: require('../../assets/images/logo-white.png'),
   graph: require('../../assets/images/graph.png'),
   waterLevel: require('../../assets/images/waterlevel.png'),
+  medicine: require('../../assets/images/medicine.png')
 };
