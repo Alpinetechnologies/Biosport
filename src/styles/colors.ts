@@ -103,6 +103,7 @@ const otherColors = {
   black: '#000000',
   white: '#ffffff',
   LightWhite: '#EEEEEE',
+  LightWhiteGrey: '#BDBDBD',
   lightGrey: '#9E9E9E',
   extraLightGrey: '#F9F9F9',
   grey: '#757575',
@@ -111,6 +112,7 @@ const otherColors = {
   darkGrey: '#212121',
   LightPink: '#FFF9E6',
   yellow: '#FFC107',
+  skyBlue: '#1A96F0',
 };
 
 const isHex = (color = '') => color.length >= 3 && color.charAt(0) === '#';

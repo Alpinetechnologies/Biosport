@@ -1,4 +1,4 @@
-import AddWeight from '@/src/screens/dashboard/logs/WeightLogs/WeightLogs';
+import Supplements from '@/src/screens/dashboard/logs/Supplement/Supplement';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { routeNames } from '../routeNames';
 
@@ -8,7 +8,7 @@ export const DashboardTabNavigator = () => {
   return (
     <>
       <DashboardTabs.Navigator
-        initialRouteName={routeNames.ADD_WEIGHT_LOG}
+        initialRouteName={routeNames.ADD_SUPPLEMENTS_LOG}
         screenOptions={{ headerShown: false }}
       >
         {/*    <DashboardTabs.Screen name={routeNames.HOME} component={Home} />
@@ -21,9 +21,19 @@ export const DashboardTabNavigator = () => {
           name={routeNames.HEART_RATE}
           component={HeartRate}
         /> */}
-        <DashboardTabs.Screen
+        {/*  <DashboardTabs.Screen
           name={routeNames.ADD_WEIGHT_LOG}
           component={AddWeight}
+        />  */}
+
+        {/* <DashboardTabs.Screen
+          name={routeNames.ADD_WATER_LOG}
+          component={WaterLog}
+        />  */}
+
+        <DashboardTabs.Screen
+          name={routeNames.ADD_SUPPLEMENTS_LOG}
+          component={Supplements}
         />
         {/*   <DashboardTabs.Screen
           name={routeNames.CONSULTATION}

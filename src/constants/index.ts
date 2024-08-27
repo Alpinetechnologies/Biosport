@@ -54,4 +54,5 @@ export const images = {
   logo: require('../../assets/images/logo.png'),
   logoWhite: require('../../assets/images/logo-white.png'),
   graph: require('../../assets/images/graph.png'),
+  waterLevel: require('../../assets/images/waterlevel.png'),
 };
