@@ -100,6 +100,7 @@ export const Heading = styled.Text`
   font-family: 'medium';
   color: ${colors.otherColors.black};
   margin-bottom: 10px;
+  text-transform: uppercase;
 `;
 
 export const GraphImage = styled.Image`

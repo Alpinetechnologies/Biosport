@@ -1,4 +1,4 @@
-import SupplementIntake from '@/src/screens/dashboard/logs/SupplementIntake/SupplementIntake';
+import EditMealLog from '@/src/screens/dashboard/logs/Meal/EditMealLog/EditMealLog';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { routeNames } from '../routeNames';
 
@@ -8,7 +8,7 @@ export const DashboardTabNavigator = () => {
   return (
     <>
       <DashboardTabs.Navigator
-        initialRouteName={routeNames.ADD_SUPPLEMENTS_LOG}
+        initialRouteName={routeNames.EDIT_MEAL_LOG}
         screenOptions={{ headerShown: false }}
       >
         {/*    <DashboardTabs.Screen name={routeNames.HOME} component={Home} />
@@ -35,10 +35,20 @@ export const DashboardTabNavigator = () => {
           name={routeNames.ADD_SUPPLEMENTS_LOG}
           component={Supplements}
         /> */}
-        <DashboardTabs.Screen
+        {/*  <DashboardTabs.Screen
           name={routeNames.ADD_ALCOHOL_INTAKE_LOG}
           component={SupplementIntake}
+        />  */}
+        {/*  <DashboardTabs.Screen
+          name={routeNames.ADD_MEAL_LOG}
+          component={AddMealLog}
+        />  */}
+
+        <DashboardTabs.Screen
+          name={routeNames.EDIT_MEAL_LOG}
+          component={EditMealLog}
         />
+
         {/*   <DashboardTabs.Screen
           name={routeNames.CONSULTATION}
           component={ConsultationStackNavigator}

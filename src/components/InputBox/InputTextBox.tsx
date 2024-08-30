@@ -1,9 +1,8 @@
-import { Feather } from '@expo/vector-icons';
 import React from 'react';
 import colors from '../../styles/colors';
-import { IconContainer, InputBox, InputContainer } from './IconInput.styled';
+import { InputBox, InputContainer } from './InpuTextBox.styles';
 
-export default function IconInput(props: any) {
+export default function InputTextBox(props: any) {
   return (
     <InputContainer>
       <InputBox
@@ -17,14 +16,6 @@ export default function IconInput(props: any) {
         editable={props.editable}
         maxLength={props.maxLength}
       />
-
-      <IconContainer>
-        <Feather
-          name={props.icon}
-          size={18}
-          color={colors.otherColors.lightGrey}
-        />
-      </IconContainer>
     </InputContainer>
   );
 }
