@@ -44,6 +44,7 @@ export const icons = {
   googleFit: require('../../assets/icons/googlefit.png'),
   oura: require('../../assets/icons/oura.png'),
   vo2: require('../../assets/icons/vo2.png'),
+  addBtn: require('../../assets/icons/addbtn.png'),
 };
 
 export const images = {
@@ -54,6 +55,7 @@ export const images = {
   logo: require('../../assets/images/logo.png'),
   logoWhite: require('../../assets/images/logo-white.png'),
   graph: require('../../assets/images/graph.png'),
+  graph2: require('../../assets/images/graph2.png'),
   waterLevel: require('../../assets/images/waterlevel.png'),
   medicine: require('../../assets/images/medicine.png'),
   meal: require('../../assets/images/meal.png'),

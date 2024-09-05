@@ -1,4 +1,4 @@
-import EditMealLog from '@/src/screens/dashboard/logs/Meal/EditMealLog/EditMealLog';
+import WorkOutPlan from '@/src/screens/dashboard/logs/Workout/WorkOutPlan/WorkOutPlan';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { routeNames } from '../routeNames';
 
@@ -44,9 +44,14 @@ export const DashboardTabNavigator = () => {
           component={AddMealLog}
         />  */}
 
-        <DashboardTabs.Screen
+        {/*  <DashboardTabs.Screen
           name={routeNames.EDIT_MEAL_LOG}
           component={EditMealLog}
+        /> */}
+
+        <DashboardTabs.Screen
+          name={routeNames.WORKOUT_PLAN}
+          component={WorkOutPlan}
         />
 
         {/*   <DashboardTabs.Screen
